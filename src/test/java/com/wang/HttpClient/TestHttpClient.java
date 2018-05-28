@@ -1,4 +1,4 @@
-package com.wang.httpClient;
+package com.wang.HttpClient;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -8,10 +8,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.Test;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 
 /**
  * @Desc HttpClient测试
@@ -22,11 +20,8 @@ public class TestHttpClient {
 
     @Test
     public void test(){
-
         // TODO Auto-generated method stub
         String url="http://www.baidu.com";
-
-
         //1.使用默认的配置的httpclient
         CloseableHttpClient client = HttpClients.createDefault();
         //2.使用get方法
@@ -37,13 +32,10 @@ public class TestHttpClient {
         try {
             //3.执行请求，获取响应
             response = client.execute(httpGet);
-
-
             //看请求是否成功，这儿打印的是http状态码
             System.out.println(response.getStatusLine().getStatusCode());
             //4.获取响应的实体内容，就是我们所要抓取得网页内容
             HttpEntity entity = response.getEntity();
-
             //5.将其打印到控制台上面
             //方法一：使用EntityUtils
             if (entity != null) {
