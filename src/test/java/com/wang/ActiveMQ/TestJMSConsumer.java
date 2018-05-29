@@ -33,11 +33,11 @@ public class TestJMSConsumer {
         // 连接
         Connection connection = null;
         // 会话 接受或者发送消息的线程
-        Session session;
+        Session session = null;
         // 消息的目的地
         Destination destination;
         // 消息消费者
-        MessageConsumer messageConsumer;
+        MessageConsumer messageConsumer = null;
         try {
             // 实例化连接工厂
             connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, URL);
@@ -63,6 +63,20 @@ public class TestJMSConsumer {
         }catch (Exception e){
             e.printStackTrace();
         }finally {
+            if(messageConsumer != null){
+                try {
+                    messageConsumer.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            if(session != null){
+                try {
+                    session.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
             if(connection != null){
                 try {
                     connection.close();
