@@ -1,4 +1,4 @@
-package com.wang.Redis;
+package com.wang.redis;
 
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;

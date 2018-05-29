@@ -1,4 +1,4 @@
-package com.wang.ActiveMQ;
+package com.wang.activemq;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;

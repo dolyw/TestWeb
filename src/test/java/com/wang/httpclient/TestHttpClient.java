@@ -1,4 +1,4 @@
-package com.wang.HttpClient;
+package com.wang.httpclient;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
