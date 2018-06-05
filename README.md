@@ -5,7 +5,8 @@
 1. Servlet3.0测试
 2. HttpClient测试
 3. ActiveMQ测试
-4. Redis入门测试
+4. Redis测试
+5. Docker测试
 
 #### 软件架构
 
@@ -16,6 +17,7 @@ Servlet3.0
 1. 直接启动即可
 2. ActiveMQ测试需要自行安装ActiveMQ服务，启动服务
 3. Redis测试需要自行安装Redis服务，启动服务
+4. Docker测试需要自行安装Docker，把war放到resources目录下，运行Dockerfile文件即可
 
 #### 使用说明
 
