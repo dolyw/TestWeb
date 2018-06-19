@@ -21,7 +21,7 @@ public class TestHttpClient {
     @Test
     public void test(){
         // TODO Auto-generated method stub
-        String url="http://www.baidu.com";
+        String url="http://localhost:8081/rateCode";
         //1.使用默认的配置的httpclient
         CloseableHttpClient client = HttpClients.createDefault();
         //2.使用get方法
