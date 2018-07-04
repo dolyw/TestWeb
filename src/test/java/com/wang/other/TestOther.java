@@ -79,4 +79,39 @@ public class TestOther {
         int hour = (int) ((date2.getTime() - date1.getTime()) / (1000*3600));
         return hour;
     }
+
+    /**
+     * @Desc 逗号分割测试
+     * @Author Wang926454
+     * @Date 2018/7/4 13:34
+     */
+    @Test
+    public void StringBuffer(){
+        StringBuffer stringBuffer = new StringBuffer("34,55,88");
+        System.out.println(stringBuffer.toString());
+
+        StringBuffer strbuff = new StringBuffer();
+        String no = "3411,5522,8833";
+        strbuff.append(no);
+        System.out.println(strbuff.toString());
+
+        String[] strArray = convertStrToArray(no);
+        for (String str:strArray) {
+            System.out.println(str);
+        }
+        for (int i = 0; i < strArray.length; i++) {
+            System.out.println(strArray[i]);
+        }
+    }
+
+    /**
+     * @Desc 将字符串以逗号分割成数组
+     * @Author Wang926454
+     * @Date 2018/7/4 13:48
+     */
+    public static String[] convertStrToArray(String str){
+        String[] strArray = null;
+        strArray = str.split(","); //拆分字符为"," ,然后把结果交给数组strArray
+        return strArray;
+    }
 }
