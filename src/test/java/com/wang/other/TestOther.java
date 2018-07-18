@@ -41,6 +41,12 @@ public class TestOther {
         System.out.println(String.format("%06d",Integer.parseInt(s2) + 1));
     }
 
+    @Test
+    public void String3(){
+        String s1 = "pdms_dev".replace("pdms_", "");
+        System.out.println(s1);
+    }
+
     /**
      * @Desc 两个时间间隔
      * @Author Wang926454
