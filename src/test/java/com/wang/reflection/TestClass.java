@@ -1,14 +1,14 @@
-package com.wang.other;
+package com.wang.reflection;
 
 import com.wang.model.User;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Desc 对象测试
@@ -17,6 +17,11 @@ import java.util.*;
  */
 public class TestClass {
 
+    /**
+     * @Desc 获取属性名，类型，值
+     * @Author wang926454
+     * @Date 2018/7/27 10:35
+     */
     @Test
     public void Class(){
         User user = new User();
@@ -85,5 +90,44 @@ public class TestClass {
             value[i]=this.getFieldValueByName(fieldNames[i], o);
         }
         return value;
+    }
+
+    /**
+     * @Desc 获取java.util.HashSet所有方法名和参数名
+     * @Author wang926454
+     * @Date 2018/7/27 10:35
+     */
+    @Test
+    public void Class2(){
+        getMethodInfo("java.util.HashSet");
+    }
+
+    @Test
+    public void Class3(){
+        getMethodInfo("com.wang.model.User");
+    }
+
+    /**
+     * @Desc 传入全类名获得对应类中所有方法名和参数名
+     * @Author wang926454
+     * @Date 2018/7/27 10:34
+     */
+    private void getMethodInfo(String pkgName) {
+        try {
+            Class clazz = Class.forName(pkgName);
+            Method[] methods = clazz.getMethods();
+            for (Method method : methods) {
+                String methodName = method.getName();
+                System.out.println("方法名称:" + methodName);
+                Class<?>[] parameterTypes = method.getParameterTypes();
+                for (Class<?> clas : parameterTypes) {
+                    String parameterName = clas.getName();
+                    System.out.println("参数名称:" + parameterName);
+                }
+                System.out.println("*****************************");
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
