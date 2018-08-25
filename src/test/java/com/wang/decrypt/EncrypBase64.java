@@ -42,11 +42,11 @@ public class EncrypBase64 {
      */
     public static void main(String[] args) throws Exception {
         EncrypBase64 de1 = new EncrypBase64();
-        String msg ="uploadFile2018";
+        String msg ="PdmsUploadFile20180823Wliduo";
         String encodeMsg = EncrypBase64.encode(msg);
         System.out.println("明文是:" + msg);
         System.out.println("加密后:" + encodeMsg);
-        System.out.println("解密后:" + EncrypBase64.decode(encodeMsg));
+        System.out.println("解密后:" + EncrypBase64.decode("UGRtc1VwbG9hZEZpbGUyMDE4MDgyM1dsaWR1bw"));
     }
 
 }

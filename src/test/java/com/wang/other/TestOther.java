@@ -120,4 +120,19 @@ public class TestOther {
         strArray = str.split(","); //拆分字符为"," ,然后把结果交给数组strArray
         return strArray;
     }
+
+    /**
+     * TODO：格式化输出时间
+     * @param 
+     * @return void
+     * @author Wang926454
+     * @date 2018/8/25 18:10
+     */
+    @Test
+    public void Date2(){
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(df.format(new Date()).toString());
+    }
+
+
 }
