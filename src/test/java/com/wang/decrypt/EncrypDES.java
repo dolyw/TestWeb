@@ -56,7 +56,7 @@ public class EncrypDES {
      */
     public byte[] Decryptor(byte[] buff) throws InvalidKeyException,
             IllegalBlockSizeException, BadPaddingException {
-        // 根据密钥，对Cipher对象进行初始化，DECRYPT_MODE表示加密模式
+        // 根据密钥，对Cipher对象进行初始化，DECRYPT_MODE表示解密模式
         c.init(Cipher.DECRYPT_MODE, deskey);
         cipherByte = c.doFinal(buff);
         return cipherByte;
@@ -75,7 +75,7 @@ public class EncrypDES {
         byte[] encontent = de1.Encrytor(msg);
         byte[] decontent = de1.Decryptor(encontent);
         System.out.println("明文是:" + msg);
-        System.out.println("加密后:" + new String(encontent));
+        System.out.println("加密后:" + EncrypBase64.encode(new String(encontent)));
         System.out.println("解密后:" + new String(decontent));
     }
 

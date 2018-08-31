@@ -22,11 +22,11 @@ public class EncrypDES3 {
 
     public EncrypDES3() throws NoSuchAlgorithmException, NoSuchPaddingException {
         Security.addProvider(new com.sun.crypto.provider.SunJCE());
-        // 实例化支持DES算法的密钥生成器(算法名称命名需按规定，否则抛出异常)
+        // 实例化支持DES3算法的密钥生成器(算法名称命名需按规定，否则抛出异常)
         keygen = KeyGenerator.getInstance("DESede");
         // 生成密钥
         deskey = keygen.generateKey();
-        // 生成Cipher对象,指定其支持的DES算法
+        // 生成Cipher对象,指定其支持的DES3算法
         c = Cipher.getInstance("DESede");
     }
     
@@ -56,7 +56,7 @@ public class EncrypDES3 {
      */
     public byte[] Decryptor(byte[] buff) throws InvalidKeyException,
             IllegalBlockSizeException, BadPaddingException {
-        // 根据密钥，对Cipher对象进行初始化，DECRYPT_MODE表示加密模式
+        // 根据密钥，对Cipher对象进行初始化，DECRYPT_MODE表示解密模式
         c.init(Cipher.DECRYPT_MODE, deskey);
         cipherByte = c.doFinal(buff);
         return cipherByte;
