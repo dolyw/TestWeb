@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
- * TODO：PropertiesUtil
+ * TODO：PropertiesUtil获取配置信息
  * @author Wang926454
  * @date 2018/8/31 17:29
  */

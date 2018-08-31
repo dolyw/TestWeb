@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
 /**
- * TODO：Base64
+ * TODO：Base64加密解密工具
  * @author Wang926454
  * @date 2018/8/21 15:14
  */
