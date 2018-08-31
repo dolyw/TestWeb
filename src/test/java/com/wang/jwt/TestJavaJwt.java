@@ -23,7 +23,7 @@ public class TestJavaJwt {
     /**
      * Token临时保存
      */
-    private static final String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2OTYxMDAsInVzZXJuYW1lIjoid2FuZyJ9.Eia9Cn8ZIrm2B1ZiFRHiBYDg7xwkEUW87u9BMuBLMe4";
+    private static final String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU3MDAyNDksImFjY291bnQiOiJ3YW5nIn0.G7poDis-4k21UD7t25nklTjvA3REVngFX6bIWsThT6o";
 
     /**
      * TODO：加密获取Token
@@ -47,8 +47,8 @@ public class TestJavaJwt {
      */
     @Test
     public void Test02(){
-        String username = JWTUtil.getUsername(TOKEN);
-        System.out.println(username);
+        String account = JWTUtil.getAccount(TOKEN);
+        System.out.println(account);
     }
 
     /**

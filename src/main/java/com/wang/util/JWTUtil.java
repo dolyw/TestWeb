@@ -24,8 +24,7 @@ public class JWTUtil {
     /**
      * TODO：校验token是否正确
      * @param token Token
-	 * @param username 用户名
-	 * @param secret 秘钥(这里秘钥都是取密码加Redis中保留的随机UUID)
+	 * @param secret 私钥(这里私钥都是取密码加Redis中保留的随机UUID)
      * @return boolean 是否正确
      * @author Wang926454
      * @date 2018/8/31 9:05
@@ -45,14 +44,14 @@ public class JWTUtil {
     /**
      * TODO：获得Token中的信息无需secret解密也能获得
      * @param token
-     * @return java.lang.String Token中包含的用户名
+     * @return java.lang.String Token中包含的帐号
      * @author Wang926454
      * @date 2018/8/31 9:07
      */
-    public static String getUsername(String token) {
+    public static String getAccount(String token) {
         try {
             DecodedJWT jwt = JWT.decode(token);
-            return jwt.getClaim("username").asString();
+            return jwt.getClaim("account").asString();
         } catch (JWTDecodeException e) {
             return null;
         }
@@ -60,19 +59,19 @@ public class JWTUtil {
 
     /**
      * TODO：生成签名
-     * @param username 用户名
-	 * @param secret 秘钥(这里秘钥都是取密码加Redis中保留的随机UUID)
+     * @param account 帐号
+	 * @param secret 私钥(这里私钥都是取密码加Redis中保留的随机UUID)
      * @return java.lang.String 返回加密的Token
      * @author Wang926454
      * @date 2018/8/31 9:07
      */
-    public static String sign(String username, String secret) {
+    public static String sign(String account, String secret) {
         try {
             Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            // 附带username信息
+            // 附带account帐号信息
             return JWT.create()
-                    .withClaim("username", username)
+                    .withClaim("account", account)
                     .withExpiresAt(date)
                     .sign(algorithm);
         } catch (UnsupportedEncodingException e) {
