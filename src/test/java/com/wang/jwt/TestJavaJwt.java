@@ -23,7 +23,7 @@ public class TestJavaJwt {
     /**
      * Token临时保存
      */
-    private static final String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2Nzk1MDcsInVzZXJuYW1lIjoid2FuZyJ9.CX2mzpKd_to0BY6DQvSNj8E0Q-6JEGwkc08KIeige_Q";
+    private static final String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2OTYxMDAsInVzZXJuYW1lIjoid2FuZyJ9.Eia9Cn8ZIrm2B1ZiFRHiBYDg7xwkEUW87u9BMuBLMe4";
 
     /**
      * TODO：加密获取Token
@@ -60,7 +60,7 @@ public class TestJavaJwt {
      */
     @Test
     public void Test03(){
-        boolean flag = JWTUtil.verify(TOKEN, "wang", "wang926454" + SECRETUUID);
+        boolean flag = JWTUtil.verify(TOKEN, "wang926454" + SECRETUUID);
         System.out.println(flag);
     }
 

@@ -18,7 +18,7 @@ public class JJWTUtil {
     private static final long EXPIRE_TIME = 5 * 60 * 1000;
 
     /**
-     * TODO：解密
+     * TODO：校验token是否正确
      * @param jsonWebToken
 	 * @param base64Security
      * @return io.jsonwebtoken.Claims
