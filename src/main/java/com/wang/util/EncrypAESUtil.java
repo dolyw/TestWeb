@@ -44,7 +44,7 @@ public class EncrypAESUtil {
             PropertiesUtil.readProperties("config.properties");
             String key = EncrypBase64Util.decode(PropertiesUtil.getProperty("encrypAESKey"));
             // 将key进行转换为byte[]数组
-            keygen.init(128, new SecureRandom(new String("key").getBytes()));
+            keygen.init(128, new SecureRandom(key.getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
             // 生成Cipher对象,指定其支持的AES算法，Cipher负责完成加密或解密工作
@@ -94,7 +94,7 @@ public class EncrypAESUtil {
             PropertiesUtil.readProperties("config.properties");
             String key = EncrypBase64Util.decode(PropertiesUtil.getProperty("encrypAESKey"));
             // 将key进行转换为byte[]数组
-            keygen.init(128, new SecureRandom(new String("key").getBytes()));
+            keygen.init(128, new SecureRandom(key.getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
             // 生成Cipher对象,指定其支持的AES算法，Cipher负责完成加密或解密工作

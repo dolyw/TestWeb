@@ -31,6 +31,6 @@ public class TestAES {
      */
     @Test
     public void Test02() throws Exception {
-        System.out.println(EncrypAESUtil.Decryptor("MUVGRjgzRUNDRjczRTNFM0M0MTZGMkEzQUFDQ0QxNUM="));
+        System.out.println(EncrypAESUtil.Decryptor("MkI1NDJENEI5NEQ0MjFGQUQ5N0RBMEE3ODM1NUNBQTQ="));
     }
 }

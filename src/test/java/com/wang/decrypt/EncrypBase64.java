@@ -71,11 +71,11 @@ public class EncrypBase64 {
         String encodeMsg7 = EncrypBase64.encode7(msg);
         System.out.println("JDK1.7明文是:" + msg);
         System.out.println("JDK1.7加密后:" + encodeMsg7);
-        System.out.println("解密后:" + EncrypBase64.decode7("UGRtc1VwbG9hZEZpbGUyMDE4MDgyM1dsaWR1bw=="));
+        System.out.println("解密后:" + EncrypBase64.decode7("V2FuZzkyNjQ1NGRTQkFQSUpXVA=="));
         String encodeMsg = EncrypBase64.encode(msg);
         System.out.println("JDK1.8明文是:" + msg);
         System.out.println("JDK1.8加密后:" + encodeMsg);
-        System.out.println("解密后:" + EncrypBase64.decode("UGRtc1VwbG9hZEZpbGUyMDE4MDgyM1dsaWR1bw=="));
+        System.out.println("解密后:" + EncrypBase64.decode("V2FuZzkyNjQ1NGRTQkFQSUpXVA=="));
     }
 
 }
