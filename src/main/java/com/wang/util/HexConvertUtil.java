@@ -6,6 +6,17 @@ package com.wang.util;
  * @date 2018/8/31 17:23
  */
 public class HexConvertUtil {
+
+    /**
+     * 1
+     */
+    private static final Integer INTEGER_1 = 1;
+
+    /**
+     * 2
+     */
+    private static final Integer INTEGER_2 = 2;
+
     /**
      * TODO：将二进制转换成16进制
      * @param buff
@@ -17,7 +28,7 @@ public class HexConvertUtil {
         StringBuffer sb = new StringBuffer();
         for (int i = 0, len = buff.length; i < len; i++) {
             String hex = Integer.toHexString(buff[i] & 0xFF);
-            if (hex.length() == 1) {
+            if (hex.length() == INTEGER_1) {
                 hex = '0' + hex;
             }
             sb.append(hex.toUpperCase());
@@ -33,11 +44,11 @@ public class HexConvertUtil {
      * @date 2018/8/31 17:21
      */
     public static byte[] parseHexStr2Byte(String hexStr) {
-        if (hexStr.length() < 1){
+        if (hexStr.length() < INTEGER_1){
             return null;
         }
-        byte[] result = new byte[hexStr.length() / 2];
-        for (int i = 0, len = hexStr.length() / 2;i < len; i++) {
+        byte[] result = new byte[hexStr.length() / INTEGER_2];
+        for (int i = 0, len = hexStr.length() / INTEGER_2;i < len; i++) {
             int high = Integer.parseInt(hexStr.substring(i * 2, i * 2 + 1), 16);
             int low = Integer.parseInt(hexStr.substring(i * 2 + 1, i * 2 + 2), 16);
             result[i] = (byte) (high * 16 + low);
