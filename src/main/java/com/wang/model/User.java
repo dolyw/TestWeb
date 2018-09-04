@@ -6,8 +6,11 @@ package com.wang.model;
  * @Date 2018/5/10 15:11
  */
 public class User {
+
     private String username;
+
     private String password;
+
     public String getUsername() {
         return username;
     }

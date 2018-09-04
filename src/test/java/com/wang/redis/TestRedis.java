@@ -1,5 +1,8 @@
 package com.wang.redis;
 
+import com.wang.model.Item;
+import com.wang.util.JedisUtil;
+import com.wang.util.JsonListUtil;
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
 
@@ -67,5 +70,34 @@ public class TestRedis {
             String key = it.next();
             System.out.println(key);
         }
+    }
+
+    @Test
+    public void TestJedisUtil01(){
+        System.out.println(JedisUtil.exists("name"));
+        System.out.println(JedisUtil.setObject("wang", "wang"));
+        System.out.println(JedisUtil.getObject("wang"));
+    }
+
+    @Test
+    public void TestJedisUtil02(){
+        System.out.println(JedisUtil.setObject("item1", new Item(2, "hah")));
+        System.out.println(JedisUtil.getObject("item1").toString());
+        System.out.println(JedisUtil.delKey("item"));
+    }
+
+    @Test
+    public void TestJedisUtil03(){
+        Item item = new Item(2, "hah");
+        System.out.println(JedisUtil.setJson("item", JsonListUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
+        System.out.println(JedisUtil.getJson("item").toString());
+    }
+
+    @Test
+    public void TestJedisUtil04(){
+        Item item = new Item(2, "hah");
+        // System.out.println(JedisUtil.setJson("item", JsonListUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
+        System.out.println(JedisUtil.exists("item"));
+        System.out.println(JedisUtil.delKey("item"));
     }
 }

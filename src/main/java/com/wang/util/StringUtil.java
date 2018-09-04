@@ -34,6 +34,32 @@ public class StringUtil {
     }
 
     /**
+     * TODO：Byte数组为空判断
+     * @param bytes
+     * @return boolean
+     * @author Wang926454
+     * @date 2018/9/4 15:39
+     */
+    public static boolean isNull(byte[] bytes){
+        // 根据byte数组长度为0判断
+        if(bytes.length == 0 || bytes == null){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * TODO：Byte数组不为空判断
+     * @param bytes
+     * @return boolean
+     * @author Wang926454
+     * @date 2018/9/4 15:41
+     */
+    public static boolean isNotNull(byte[] bytes) {
+        return !isNull(bytes);
+    }
+
+    /**
      * TODO：驼峰转下划线工具
      * @param param
      * @return java.lang.String
