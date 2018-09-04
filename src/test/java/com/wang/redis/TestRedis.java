@@ -2,7 +2,7 @@ package com.wang.redis;
 
 import com.wang.model.Item;
 import com.wang.util.JedisUtil;
-import com.wang.util.JsonListUtil;
+import com.wang.util.JsonConvertUtil;
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
 
@@ -89,14 +89,14 @@ public class TestRedis {
     @Test
     public void TestJedisUtil03(){
         Item item = new Item(2, "hah");
-        System.out.println(JedisUtil.setJson("item", JsonListUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
+        System.out.println(JedisUtil.setJson("item", JsonConvertUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
         System.out.println(JedisUtil.getJson("item").toString());
     }
 
     @Test
     public void TestJedisUtil04(){
         Item item = new Item(2, "hah");
-        // System.out.println(JedisUtil.setJson("item", JsonListUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
+        // System.out.println(JedisUtil.setJson("item", JsonConvertUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
         System.out.println(JedisUtil.exists("item"));
         System.out.println(JedisUtil.delKey("item"));
     }

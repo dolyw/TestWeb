@@ -75,6 +75,11 @@ public final class JedisUtil {
     public final static int EXRP_DAY = 60 * 60 * 24;
 
     /**
+     * redis-OK
+     */
+    public final static String OK = "OK";
+
+    /**
      * 连接池
      */
     private static JedisPool jedisPool = null;
@@ -192,7 +197,7 @@ public final class JedisUtil {
         try {
             jedis = jedisPool.getResource();
             result = jedis.set(key.getBytes(), SerializableUtil.serializable(value));
-            if("OK".equals(result)) {
+            if(OK.equals(result)) {
                 jedis.expire(key.getBytes(), expiretime);
             }
             return result;
@@ -266,7 +271,7 @@ public final class JedisUtil {
         try {
             jedis = jedisPool.getResource();
             result = jedis.set(key, value);
-            if("OK".equals(result)) {
+            if(OK.equals(result)) {
                 jedis.expire(key, expiretime);
             }
             return result;

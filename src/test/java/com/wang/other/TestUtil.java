@@ -2,14 +2,11 @@ package com.wang.other;
 
 import com.wang.model.Item;
 import com.wang.util.JedisUtil;
-import com.wang.util.JsonListUtil;
+import com.wang.util.JsonConvertUtil;
 import com.wang.util.RandomUtil;
 import com.wang.util.StringUtil;
 import org.junit.jupiter.api.Test;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -41,10 +38,10 @@ public class TestUtil {
         map.put("code", "012121");
         map.put("status", 1);
         map.put("data", new Item(1, "wang"));
-        String mapJson = JsonListUtil.objectToJson(map);
+        String mapJson = JsonConvertUtil.objectToJson(map);
         System.out.println(mapJson);
         JedisUtil.setJson("item22", mapJson, JedisUtil.EXRP_MINUTE);
-        Map<String, Object> map2 = JsonListUtil.jsonToObject(JedisUtil.getJson("item22"), Map.class);
+        Map<String, Object> map2 = JsonConvertUtil.jsonToObject(JedisUtil.getJson("item22"), Map.class);
         System.out.println(map2);
     }
 
@@ -52,10 +49,10 @@ public class TestUtil {
     public void String4(){
         List<Item> itemList = new ArrayList<Item>();
         itemList.add(new Item(1, "wang"));
-        String listJson = JsonListUtil.objectToJson(itemList);
+        String listJson = JsonConvertUtil.objectToJson(itemList);
         System.out.println(listJson);
         JedisUtil.setJson("item33", listJson, JedisUtil.EXRP_MINUTE);
-        List<Item> itemList2 = JsonListUtil.jsonToObject(JedisUtil.getJson("item33"), List.class);
+        List<Item> itemList2 = JsonConvertUtil.jsonToObject(JedisUtil.getJson("item33"), List.class);
         System.out.println(itemList2);
         System.out.println(itemList2.size());
     }

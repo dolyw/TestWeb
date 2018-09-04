@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSONObject;
  * @author Wang926454
  * @date 2018/8/9 15:37
  */
-public class JsonListUtil {
+public class JsonConvertUtil {
     /**
      * JSON 转 Object
      */
