@@ -134,5 +134,17 @@ public class TestOther {
         System.out.println(df.format(new Date()).toString());
     }
 
+    @Test
+    public void t3(){
+        try{
+            System.out.println("c");
+            return;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            System.out.println("finally");
+        }
+        System.out.println("con");
+    }
 
 }

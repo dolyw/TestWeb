@@ -1,5 +1,6 @@
 package com.wang.util;
 
+import com.wang.util.convert.SerializableUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
@@ -7,7 +8,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * TODO：JedisUtil
+ * TODO：JedisUtil(推荐存Byte数组，存Json字符串效率更慢)
  * @author Wang926454
  * @date 2018/9/4 15:45
  */
@@ -117,21 +118,19 @@ public final class JedisUtil {
             }
         } catch (Exception e) {
             logger.error("获取Jedis实例异常:" + e.getMessage());
-            return null;
         }
+        return null;
     }
 
     /**
      * TODO：释放Jedis资源
-     * @param jedis
+     * @param 
      * @return void
      * @author Wang926454
-     * @date 2018/9/4 15:47
+     * @date 2018/9/5 9:16
      */
-    public static void returnResource(final Jedis jedis) {
-        if (jedis != null) {
-            jedisPool.returnResource(jedis);
-        }
+    public static void closePool() {
+        jedisPool.close();
     }
 
     /**
@@ -174,12 +173,12 @@ public final class JedisUtil {
             return jedis.set(key.getBytes(), SerializableUtil.serializable(value));
         } catch (Exception e) {
             logger.error("setObject设置redis键值异常:key=" + key + " value=" + value + " cause:" + e.getMessage());
-            return null;
         } finally {
             if(jedis != null) {
                 jedis.close();
             }
         }
+        return null;
     }
 
     /**
@@ -248,12 +247,12 @@ public final class JedisUtil {
             return jedis.set(key, value);
         } catch (Exception e) {
             logger.error("setJson设置redis键值异常:key=" + key + " value=" + value + " cause:" + e.getMessage());
-            return null;
         } finally {
             if(jedis != null) {
                 jedis.close();
             }
         }
+        return null;
     }
 
     /**
@@ -299,12 +298,12 @@ public final class JedisUtil {
             return jedis.del(key.getBytes());
         }catch(Exception e) {
             logger.error("删除key:" + key + "异常:" + e.getMessage());
-            return null;
         }finally{
             if(jedis != null) {
                 jedis.close();
             }
         }
+        return null;
     }
 
     /**
@@ -321,11 +320,11 @@ public final class JedisUtil {
             return jedis.exists(key.getBytes());
         }catch(Exception e) {
             logger.error("查询key:" + key + "异常:" + e.getMessage());
-            return null;
         }finally{
             if(jedis != null) {
                 jedis.close();
             }
         }
+        return null;
     }
 }

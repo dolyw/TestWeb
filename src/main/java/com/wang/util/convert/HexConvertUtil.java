@@ -1,4 +1,4 @@
-package com.wang.util;
+package com.wang.util.convert;
 
 /**
  * TODO：进制转换

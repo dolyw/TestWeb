@@ -2,7 +2,7 @@ package com.wang.other;
 
 import com.wang.model.Item;
 import com.wang.util.JedisUtil;
-import com.wang.util.JsonConvertUtil;
+import com.wang.util.convert.JsonConvertUtil;
 import com.wang.util.RandomUtil;
 import com.wang.util.StringUtil;
 import org.junit.jupiter.api.Test;

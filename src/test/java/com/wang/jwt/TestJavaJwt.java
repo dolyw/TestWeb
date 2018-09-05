@@ -1,12 +1,7 @@
 package com.wang.jwt;
 
-import com.wang.util.JWTUtil;
+import com.wang.util.jwt.JWTUtil;
 import org.junit.jupiter.api.Test;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * TODO：Java-Jwt

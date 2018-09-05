@@ -1,5 +1,6 @@
-package com.wang.util;
+package com.wang.util.encryp;
 
+import com.wang.util.convert.HexConvertUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,23 +59,18 @@ public class EncrypAESUtil {
             return EncrypBase64Util.encode(HexConvertUtil.parseByte2HexStr(cipherByte));
         } catch (NoSuchAlgorithmException e){
             logger.error(e.getMessage());
-            return null;
         } catch (UnsupportedEncodingException e){
             logger.error(e.getMessage());
-            return null;
         } catch (NoSuchPaddingException e){
             logger.error(e.getMessage());
-            return null;
         } catch (InvalidKeyException e){
             logger.error(e.getMessage());
-            return null;
         } catch (IllegalBlockSizeException e){
             logger.error(e.getMessage());
-            return null;
         } catch (BadPaddingException e){
             logger.error(e.getMessage());
-            return null;
         }
+        return null;
     }
 
     /**
@@ -105,22 +101,17 @@ public class EncrypAESUtil {
             return new String(cipherByte);
         } catch (NoSuchAlgorithmException e){
             logger.error(e.getMessage());
-            return null;
         } catch (UnsupportedEncodingException e){
             logger.error(e.getMessage());
-            return null;
         } catch (NoSuchPaddingException e){
             logger.error(e.getMessage());
-            return null;
         } catch (InvalidKeyException e){
             logger.error(e.getMessage());
-            return null;
         } catch (IllegalBlockSizeException e){
             logger.error(e.getMessage());
-            return null;
         } catch (BadPaddingException e){
             logger.error(e.getMessage());
-            return null;
         }
+        return null;
     }
 }

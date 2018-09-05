@@ -1,4 +1,4 @@
-package com.wang.util;
+package com.wang.util.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
@@ -31,10 +31,10 @@ public class JJWTUtil {
                     .setSigningKey(base64Security.getBytes())
                     .parseClaimsJws(jsonWebToken).getBody();
             return claims;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
     }
 
     /**
