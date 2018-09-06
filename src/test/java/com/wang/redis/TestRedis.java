@@ -6,6 +6,7 @@ import com.wang.util.convert.JsonConvertUtil;
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -75,7 +76,7 @@ public class TestRedis {
     @Test
     public void TestJedisUtil01(){
         System.out.println(JedisUtil.exists("name"));
-        System.out.println(JedisUtil.setObject("wang", "wang"));
+        System.out.println(JedisUtil.setObject("wang", new Item(2, "hah"), 300));
         System.out.println(JedisUtil.getObject("wang"));
     }
 
@@ -99,5 +100,18 @@ public class TestRedis {
         // System.out.println(JedisUtil.setJson("item", JsonConvertUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
         System.out.println(JedisUtil.exists("item"));
         System.out.println(JedisUtil.delKey("item"));
+    }
+
+    @Test
+    public void TestJedisUtil05(){
+        Set<String> keys = JedisUtil.keysS("shiro:test:*");
+        List<String> list = new ArrayList<String>();
+        for (String s : keys) {
+            if(JedisUtil.exists(s)){
+                list.add(JedisUtil.getJson(s).toString());
+            }
+        }
+        System.out.println(keys);
+        System.out.println(list);
     }
 }
