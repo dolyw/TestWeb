@@ -1,6 +1,6 @@
 package com.wang.decrypt;
 
-import com.wang.util.encryp.EncrypAESUtil;
+import com.wang.util.EncrypAESUtil;
 import org.junit.jupiter.api.Test;
 
 /**

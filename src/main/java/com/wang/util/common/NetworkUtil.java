@@ -1,11 +1,11 @@
-package com.wang.util;
+package com.wang.util.common;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * NetworkUtil
+ * Network工具
  * @author Wang926454
  * @date 2018/9/4 15:02
  */

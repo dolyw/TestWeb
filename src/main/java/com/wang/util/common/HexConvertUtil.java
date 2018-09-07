@@ -1,7 +1,7 @@
-package com.wang.util.convert;
+package com.wang.util.common;
 
 /**
- * 进制转换
+ * 进制转换工具
  * @author Wang926454
  * @date 2018/8/31 17:23
  */

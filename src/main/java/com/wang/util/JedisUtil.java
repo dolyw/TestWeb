@@ -1,6 +1,7 @@
 package com.wang.util;
 
-import com.wang.util.convert.SerializableUtil;
+import com.wang.util.common.SerializableUtil;
+import com.wang.util.common.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;

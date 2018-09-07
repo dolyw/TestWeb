@@ -1,4 +1,4 @@
-package com.wang.util.convert;
+package com.wang.util.common;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * 序列化工具(JDK)(也可以使用Protobuf自行百度)
+ * Serializable工具(JDK)(也可以使用Protobuf自行百度)
  * @author Wang926454
  * @date 2018/9/4 15:13
  */

@@ -1,6 +1,7 @@
-package com.wang.util.encryp;
+package com.wang.util;
 
-import com.wang.util.convert.HexConvertUtil;
+import com.wang.util.common.Base64ConvertUtil;
+import com.wang.util.common.HexConvertUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,7 +44,7 @@ public class EncrypAESUtil {
             // KeyGenerator 提供对称密钥生成器的功能，支持各种算法
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
             // 获取私钥
-            String key = EncrypBase64Util.decode(KEY);
+            String key = Base64ConvertUtil.decode(KEY);
             // 将key进行转换为byte[]数组
             keygen.init(128, new SecureRandom(key.getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
@@ -56,7 +57,7 @@ public class EncrypAESUtil {
             // 该字节数组负责保存加密的结果
             byte[] cipherByte = c.doFinal(src);
             // 先将二进制转换成16进制，再返回Bsae64加密后的String
-            return EncrypBase64Util.encode(HexConvertUtil.parseByte2HexStr(cipherByte));
+            return Base64ConvertUtil.encode(HexConvertUtil.parseByte2HexStr(cipherByte));
         } catch (NoSuchAlgorithmException e){
             logger.error(e.getMessage());
         } catch (UnsupportedEncodingException e){
@@ -87,7 +88,7 @@ public class EncrypAESUtil {
             // KeyGenerator 提供对称密钥生成器的功能，支持各种算法
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
             // 获取私钥
-            String key = EncrypBase64Util.decode(KEY);
+            String key = Base64ConvertUtil.decode(KEY);
             // 将key进行转换为byte[]数组
             keygen.init(128, new SecureRandom(key.getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
@@ -97,7 +98,7 @@ public class EncrypAESUtil {
             // 根据密钥，对Cipher对象进行初始化，DECRYPT_MODE表示解密模式
             c.init(Cipher.DECRYPT_MODE, deskey);
             // 该字节数组负责保存加密的结果，先对str进行Bsae64解密，将16进制转换为二进制
-            byte[] cipherByte = c.doFinal(HexConvertUtil.parseHexStr2Byte(EncrypBase64Util.decode(str)));
+            byte[] cipherByte = c.doFinal(HexConvertUtil.parseHexStr2Byte(Base64ConvertUtil.decode(str)));
             return new String(cipherByte);
         } catch (NoSuchAlgorithmException e){
             logger.error(e.getMessage());

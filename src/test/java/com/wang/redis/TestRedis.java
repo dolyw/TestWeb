@@ -2,7 +2,7 @@ package com.wang.redis;
 
 import com.wang.model.Item;
 import com.wang.util.JedisUtil;
-import com.wang.util.convert.JsonConvertUtil;
+import com.wang.util.common.JsonConvertUtil;
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
 

@@ -1,4 +1,4 @@
-package com.wang.util;
+package com.wang.util.common;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.UUID;
 
 /**
- * 随机数工具类
+ * Random工具
  * @author Wang926454
  * @date 2018/9/4 14:56
  */

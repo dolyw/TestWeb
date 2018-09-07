@@ -1,4 +1,4 @@
-package com.wang.util.jwt;
+package com.wang.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;

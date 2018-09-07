@@ -1,6 +1,6 @@
 package com.wang.jwt;
 
-import com.wang.util.jwt.JWTUtil;
+import com.wang.util.JWTUtil;
 import org.junit.jupiter.api.Test;
 
 /**

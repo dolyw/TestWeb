@@ -1,4 +1,4 @@
-package com.wang.util.jwt;
+package com.wang.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
