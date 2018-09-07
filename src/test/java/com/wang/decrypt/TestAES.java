@@ -4,14 +4,14 @@ import com.wang.util.encryp.EncrypAESUtil;
 import org.junit.jupiter.api.Test;
 
 /**
- * TODO：AES测试
+ * AES测试
  * @author Wang926454
  * @date 2018/8/31 9:51
  */
 public class TestAES {
 
     /**
-     * TODO：以帐号加密码的方式加密，可以减少加密后重复
+     * 以帐号加密码的方式加密，可以减少加密后重复
      * @param 
      * @return void
      * @author Wang926454
@@ -23,7 +23,7 @@ public class TestAES {
     }
 
     /**
-     * TODO：解密
+     * 解密
      * @param 
      * @return void
      * @author Wang926454

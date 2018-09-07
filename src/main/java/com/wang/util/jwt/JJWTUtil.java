@@ -7,7 +7,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 
 /**
- * TODO：JJWT工具类
+ * JJWT工具类
  * @author Wang926454
  * @date 2018/8/31 9:47
  */
@@ -18,7 +18,7 @@ public class JJWTUtil {
     private static final long EXPIRE_TIME = 5 * 60 * 1000;
 
     /**
-     * TODO：校验token是否正确
+     * 校验token是否正确
      * @param jsonWebToken
 	 * @param base64Security
      * @return io.jsonwebtoken.Claims
@@ -38,7 +38,7 @@ public class JJWTUtil {
     }
 
     /**
-     * TODO：生成签名，获取Token
+     * 生成签名，获取Token
      * @param username
 	 * @param base64Security
      * @return java.lang.String

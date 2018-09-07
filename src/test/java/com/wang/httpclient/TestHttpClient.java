@@ -20,7 +20,6 @@ public class TestHttpClient {
 
     @Test
     public void test(){
-        // TODO Auto-generated method stub
         String url="http://localhost:8081/rateCode";
         //1.使用默认的配置的httpclient
         CloseableHttpClient client = HttpClients.createDefault();
@@ -28,7 +27,6 @@ public class TestHttpClient {
         HttpGet httpGet = new HttpGet(url);
         InputStream inputStream = null;
         CloseableHttpResponse response = null;
-
         try {
             //3.执行请求，获取响应
             response = client.execute(httpGet);
@@ -56,14 +54,12 @@ public class TestHttpClient {
             }*/
 
         } catch (UnsupportedOperationException | IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } finally {
             if (inputStream != null) {
                 try {
                     inputStream.close();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
@@ -71,7 +67,6 @@ public class TestHttpClient {
                 try {
                     response.close();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }

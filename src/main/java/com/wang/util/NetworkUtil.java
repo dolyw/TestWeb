@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * TODO：NetworkUtil
+ * NetworkUtil
  * @author Wang926454
  * @date 2018/9/4 15:02
  */
@@ -24,7 +24,7 @@ public class NetworkUtil {
     private static final int IP_MAX_NUM = 15;
 
     /**
-     * TODO：获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址
+     * 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址
      * @param request
      * @return java.lang.String
      * @author Wang926454

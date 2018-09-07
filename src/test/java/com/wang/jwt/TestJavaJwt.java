@@ -4,7 +4,7 @@ import com.wang.util.jwt.JWTUtil;
 import org.junit.jupiter.api.Test;
 
 /**
- * TODO：Java-Jwt
+ * Java-Jwt
  * @author Wang926454
  * @date 2018/8/31 9:08
  */
@@ -21,7 +21,7 @@ public class TestJavaJwt {
     private static final String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU3MDAyNDksImFjY291bnQiOiJ3YW5nIn0.G7poDis-4k21UD7t25nklTjvA3REVngFX6bIWsThT6o";
 
     /**
-     * TODO：加密获取Token
+     * 加密获取Token
      * @param
      * @return void
      * @author Wang926454
@@ -34,7 +34,7 @@ public class TestJavaJwt {
     }
 
     /**
-     * TODO：获取用户名
+     * 获取用户名
      * @param
      * @return void
      * @author Wang926454
@@ -47,7 +47,7 @@ public class TestJavaJwt {
     }
 
     /**
-     * TODO：认证Token
+     * 认证Token
      * @param
      * @return void
      * @author Wang926454

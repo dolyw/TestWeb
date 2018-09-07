@@ -4,14 +4,14 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * TODO：MD5
+ * MD5
  * @author Wang926454
  * @date 2018/8/21 15:05
  */
 public class EncrypMD5 {
     
     /**
-     * TODO：加密
+     * 加密
      * @param info
      * @return byte[]
      * @author Wang926454
@@ -29,7 +29,7 @@ public class EncrypMD5 {
     }
 
     /**
-     * TODO：测试
+     * 测试
      * @param args
      * @return void
      * @author Wang926454

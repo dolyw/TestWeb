@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.UUID;
 
 /**
- * TODO：随机数工具类
+ * 随机数工具类
  * @author Wang926454
  * @date 2018/9/4 14:56
  */

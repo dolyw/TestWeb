@@ -10,7 +10,7 @@ import redis.clients.jedis.JedisPoolConfig;
 import java.util.Set;
 
 /**
- * TODO：JedisUtil(推荐存Byte数组，存Json字符串效率更慢)
+ * JedisUtil(推荐存Byte数组，存Json字符串效率更慢)
  * @author Wang926454
  * @date 2018/9/4 15:45
  */
@@ -104,7 +104,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：获取Jedis实例
+     * 获取Jedis实例
      * @param 
      * @return redis.clients.jedis.Jedis
      * @author Wang926454
@@ -125,7 +125,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：释放Jedis资源
+     * 释放Jedis资源
      * @param 
      * @return void
      * @author Wang926454
@@ -140,7 +140,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：获取redis键值-object
+     * 获取redis键值-object
      * @param key
      * @return java.lang.Object
      * @author Wang926454
@@ -165,7 +165,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：设置redis键值-object
+     * 设置redis键值-object
      * @param key
 	 * @param value
      * @return java.lang.String
@@ -188,7 +188,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：设置redis键值-object-expiretime
+     * 设置redis键值-object-expiretime
      * @param key
 	 * @param value
 	 * @param expiretime
@@ -217,7 +217,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：获取redis键值-Json
+     * 获取redis键值-Json
      * @param key
      * @return java.lang.Object
      * @author Wang926454
@@ -239,7 +239,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：设置redis键值-Json
+     * 设置redis键值-Json
      * @param key
      * @param value
      * @return java.lang.String
@@ -262,7 +262,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：设置redis键值-Json-expiretime
+     * 设置redis键值-Json-expiretime
      * @param key
      * @param value
      * @param expiretime
@@ -291,7 +291,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：删除key
+     * 删除key
      * @param key
      * @return java.lang.Long
      * @author Wang926454
@@ -313,7 +313,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：key是否存在
+     * key是否存在
      * @param key
      * @return java.lang.Boolean
      * @author Wang926454
@@ -335,7 +335,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：模糊查询获取key集合
+     * 模糊查询获取key集合
      * @param key
      * @return java.util.Set<java.lang.String>
      * @author Wang926454
@@ -357,7 +357,7 @@ public final class JedisUtil {
     }
 
     /**
-     * TODO：模糊查询获取key集合
+     * 模糊查询获取key集合
      * @param key
      * @return java.util.Set<java.lang.String>
      * @author Wang926454

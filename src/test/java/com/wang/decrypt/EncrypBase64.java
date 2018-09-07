@@ -5,14 +5,14 @@ import sun.misc.BASE64Encoder;
 import sun.misc.BASE64Decoder;
 
 /**
- * TODO：Base64
+ * Base64
  * @author Wang926454
  * @date 2018/8/21 15:14
  */
 public class EncrypBase64 {
 
     /**
-     * TODO：加密JDK1.8
+     * 加密JDK1.8
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -24,7 +24,7 @@ public class EncrypBase64 {
     }
 
     /**
-     * TODO：解密JDK1.8
+     * 解密JDK1.8
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -36,7 +36,7 @@ public class EncrypBase64 {
     }
 
     /**
-     * TODO：加密JDK1.7
+     * 加密JDK1.7
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -47,7 +47,7 @@ public class EncrypBase64 {
     }
 
     /**
-     * TODO：解密JDK1.7
+     * 解密JDK1.7
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -59,7 +59,7 @@ public class EncrypBase64 {
     }
     
     /**
-     * TODO：测试
+     * 测试
      * @param args
      * @return void
      * @author Wang926454

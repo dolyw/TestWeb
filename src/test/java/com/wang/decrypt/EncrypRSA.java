@@ -12,14 +12,14 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
 /**
- * TODO：RSA
+ * RSA
  * @author Wang926454
  * @date 2018/8/21 15:11
  */
 public class EncrypRSA {
 
     /**
-     * TODO：加密
+     * 加密
      * @param publicKey
 	 * @param srcBytes
      * @return byte[]
@@ -39,7 +39,7 @@ public class EncrypRSA {
     }
     
     /**
-     * TODO：解密
+     * 解密
      * @param privateKey
 	 * @param srcBytes
      * @return byte[]
@@ -59,7 +59,7 @@ public class EncrypRSA {
     }
 
     /**
-     * TODO：测试
+     * 测试
      * @param args
      * @return void
      * @author Wang926454
