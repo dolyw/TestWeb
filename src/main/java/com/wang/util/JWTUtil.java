@@ -24,7 +24,7 @@ public class JWTUtil {
     /**
      * 校验token是否正确
      * @param token Token
-	 * @param secret 私钥(这里私钥都是取密码加Redis中保留的随机UUID)
+	 * @param secret 私钥
      * @return boolean 是否正确
      * @author Wang926454
      * @date 2018/8/31 9:05
@@ -45,14 +45,15 @@ public class JWTUtil {
     /**
      * 获得Token中的信息无需secret解密也能获得
      * @param token
-     * @return java.lang.String Token中包含的帐号
+	 * @param claim
+     * @return java.lang.String
      * @author Wang926454
-     * @date 2018/8/31 9:07
+     * @date 2018/9/7 17:01
      */
-    public static String getAccount(String token) {
+    public static String getClaim(String token, String claim) {
         try {
             DecodedJWT jwt = JWT.decode(token);
-            return jwt.getClaim("account").asString();
+            return jwt.getClaim(claim).asString();
         } catch (JWTDecodeException e) {
             e.printStackTrace();
         }
@@ -62,7 +63,7 @@ public class JWTUtil {
     /**
      * 生成签名
      * @param account 帐号
-	 * @param secret 私钥(这里私钥都是取密码加Redis中保留的随机UUID)
+	 * @param secret 私钥
      * @return java.lang.String 返回加密的Token
      * @author Wang926454
      * @date 2018/8/31 9:07

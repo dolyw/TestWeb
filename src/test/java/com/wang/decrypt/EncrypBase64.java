@@ -67,7 +67,7 @@ public class EncrypBase64 {
      */
     public static void main(String[] args) throws Exception {
         EncrypBase64 de1 = new EncrypBase64();
-        String msg ="Wang926454dSBAPIJWT";
+        String msg ="SBAPIJWTdWang926454";
         String encodeMsg7 = EncrypBase64.encode7(msg);
         System.out.println("JDK1.7明文是:" + msg);
         System.out.println("JDK1.7加密后:" + encodeMsg7);

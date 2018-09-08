@@ -132,6 +132,9 @@ public class TestOther {
     public void Date2(){
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(df.format(new Date()).toString());
+        System.out.println(System.currentTimeMillis());
+        long time = 1536308101495L;
+        System.out.println(System.currentTimeMillis() - time);
     }
 
     @Test
@@ -145,6 +148,14 @@ public class TestOther {
             System.out.println("finally");
         }
         System.out.println("con");
+    }
+
+    @Test
+    public void t4(){
+        String s = "dsa2:dsa1:wqe3";
+        String[] strArray = null;
+        strArray = s.split(":"); //拆分字符为"," ,然后把结果交给数组strArray
+        System.out.println(strArray[strArray.length - 1]);
     }
 
 }

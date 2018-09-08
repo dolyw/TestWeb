@@ -42,7 +42,7 @@ public class TestJavaJwt {
      */
     @Test
     public void Test02(){
-        String account = JWTUtil.getAccount(TOKEN);
+        String account = JWTUtil.getClaim(TOKEN, "account");
         System.out.println(account);
     }
 
