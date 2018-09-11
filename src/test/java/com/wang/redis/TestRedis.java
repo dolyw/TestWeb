@@ -82,9 +82,10 @@ public class TestRedis {
 
     @Test
     public void TestJedisUtil02(){
-        System.out.println(JedisUtil.setObject("item1", new Item(2, "hah")));
-        System.out.println(JedisUtil.getObject("item1").toString());
-        System.out.println(JedisUtil.delKey("item"));
+        // System.out.println(JedisUtil.setObject("item1", new Item(2, "hah")));
+        // System.out.println(JedisUtil.getObject("item1").toString());
+        // System.out.println(JedisUtil.delKey("item"));
+        System.out.println(JedisUtil.getExpireTime("shiro:refresh_token:wang"));
     }
 
     @Test

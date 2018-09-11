@@ -379,4 +379,28 @@ public final class JedisUtil {
         }
         return null;
     }
+
+    /**
+     * 获取过期剩余时间
+     * @param key
+     * @return java.lang.String
+     * @author Wang926454
+     * @date 2018/9/11 16:26
+     */
+    public static Long getExpireTime(String key) {
+        Long result = -2L;
+        Jedis jedis = null;
+        try {
+            jedis = jedisPool.getResource();
+            result = jedis.ttl(key);
+            return result;
+        } catch (Exception e) {
+            logger.error("获取Redis键过期剩余时间getExpireTime方法异常:key=" + key + " cause=" + e.getMessage());
+        } finally {
+            if(jedis != null) {
+                jedis.close();
+            }
+        }
+        return result;
+    }
 }
