@@ -29,6 +29,23 @@ Servlet3.0
 1. Test测试
 2. 常用工具类存放
 
+##### 常用工具类列表
+
+1. Base64ConvertUtil(Base64互转)
+2. HexConvertUtil(Hex进制互转)
+3. JsonConvertUtil(Json与Object互转)
+4. NetworkUtil(IP地址获取)
+5. PropertiesUtil(Properties配置文件属性获取)
+6. RandomUtil(随机数获取)
+7. SerializableUtil(序列号工具)
+8. StringUtil(字符串工具)
+9. EditDistanceUtil(字符串相似度编辑距离算法工具)
+10. EncrypAESUtil(AES加密解密工具)
+11. JavaMailUtil(Email工具)
+12. JedisUtil(Jedis工具)
+13. JJWTUtil(JJWT工具)
+14. JWTUtil(Java-JWT工具)
+
 #### 参与贡献
 
 1. Fork 本项目

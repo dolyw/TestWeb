@@ -1,6 +1,7 @@
 package com.wang.other;
 
 import com.wang.model.Item;
+import com.wang.util.EditDistanceUtil;
 import com.wang.util.JedisUtil;
 import com.wang.util.common.JsonConvertUtil;
 import com.wang.util.common.RandomUtil;
@@ -55,6 +56,13 @@ public class TestUtil {
         List<Item> itemList2 = JsonConvertUtil.jsonToObject(JedisUtil.getJson("item33"), List.class);
         System.out.println(itemList2);
         System.out.println(itemList2.size());
+    }
+
+    @Test
+    public void String6(){
+        String s1 = "abcd";
+        String s2 = "def";
+        System.out.println(EditDistanceUtil.getSimilarityRatio(s1, s2));
     }
 
 }
