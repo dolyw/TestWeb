@@ -45,7 +45,7 @@ public class EncrypAESUtil {
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
             // 获取私钥
             String key = Base64ConvertUtil.decode(KEY);
-            // 将key进行转换为byte[]数组
+            // 将私钥key进行转换为byte[]数组按128位初始化
             keygen.init(128, new SecureRandom(key.getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
@@ -89,7 +89,7 @@ public class EncrypAESUtil {
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
             // 获取私钥
             String key = Base64ConvertUtil.decode(KEY);
-            // 将key进行转换为byte[]数组
+            // 将私钥key进行转换为byte[]数组按128位初始化
             keygen.init(128, new SecureRandom(key.getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
