@@ -1,6 +1,6 @@
 package com.wang.decrypt;
 
-import com.wang.util.EncrypAESUtil;
+import com.wang.util.AesCipherUtil;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -19,7 +19,7 @@ public class TestAES {
      */
     @Test
     public void Test01() throws Exception {
-        System.out.println((EncrypAESUtil.Encrytor("wang" + "wang926454")));
+        System.out.println((AesCipherUtil.enCrypto("wang" + "wang926454")));
     }
 
     /**
@@ -31,6 +31,6 @@ public class TestAES {
      */
     @Test
     public void Test02() throws Exception {
-        System.out.println(EncrypAESUtil.Decryptor("MkI1NDJENEI5NEQ0MjFGQUQ5N0RBMEE3ODM1NUNBQTQ="));
+        System.out.println(AesCipherUtil.deCrypto("MkI1NDJENEI5NEQ0MjFGQUQ5N0RBMEE3ODM1NUNBQTQ="));
     }
 }

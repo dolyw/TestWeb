@@ -1,6 +1,6 @@
 package com.wang.jwt;
 
-import com.wang.util.JWTUtil;
+import com.wang.util.JwtUtil;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -29,7 +29,7 @@ public class TestJavaJwt {
      */
     @Test
     public void Test01(){
-        String token = JWTUtil.sign("wang", "wang926454" + SECRETUUID);
+        String token = JwtUtil.sign("wang", "wang926454" + SECRETUUID);
         System.out.println(token);
     }
 
@@ -42,7 +42,7 @@ public class TestJavaJwt {
      */
     @Test
     public void Test02(){
-        String account = JWTUtil.getClaim(TOKEN, "account");
+        String account = JwtUtil.getClaim(TOKEN, "account");
         System.out.println(account);
     }
 
@@ -55,7 +55,7 @@ public class TestJavaJwt {
      */
     @Test
     public void Test03(){
-        boolean flag = JWTUtil.verify(TOKEN, "wang926454" + SECRETUUID);
+        boolean flag = JwtUtil.verify(TOKEN, "wang926454" + SECRETUUID);
         System.out.println(flag);
     }
 

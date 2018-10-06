@@ -40,11 +40,11 @@ Servlet3.0
 7. SerializableUtil(序列号工具)
 8. StringUtil(字符串工具)
 9. EditDistanceUtil(字符串相似度编辑距离算法工具)
-10. EncrypAESUtil(AES加密解密工具)
+10. AesCipherUtil(AES加密解密工具)
 11. JavaMailUtil(Email工具)
 12. JedisUtil(Jedis工具)
-13. JJWTUtil(JJWT工具)
-14. JWTUtil(Java-JWT工具)
+13. JjwtUtil(JJWT工具)
+14. JwtUtil(Java-JWT工具)
 
 #### 参与贡献
 

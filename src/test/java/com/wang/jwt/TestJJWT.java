@@ -1,6 +1,6 @@
 package com.wang.jwt;
 
-import com.wang.util.JJWTUtil;
+import com.wang.util.JjwtUtil;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -29,7 +29,7 @@ public class TestJJWT {
      */
     @Test
     public void Test01(){
-        String token = JJWTUtil.createJWT("wang", "wang926454" + SECRETUUID);
+        String token = JjwtUtil.createJWT("wang", "wang926454" + SECRETUUID);
         System.out.println(token);
     }
 
@@ -42,7 +42,7 @@ public class TestJJWT {
      */
     @Test
     public void Test02(){
-        System.out.println(JJWTUtil.parseJWT(TOKEN, "wang926454" + SECRETUUID).getSubject());
+        System.out.println(JjwtUtil.parseJWT(TOKEN, "wang926454" + SECRETUUID).getSubject());
     }
 
     /**
@@ -54,6 +54,6 @@ public class TestJJWT {
      */
     @Test
     public void Test03(){
-        System.out.println(JJWTUtil.parseJWT(TOKEN, "wang926454" + SECRETUUID));
+        System.out.println(JjwtUtil.parseJWT(TOKEN, "wang926454" + SECRETUUID));
     }
 }

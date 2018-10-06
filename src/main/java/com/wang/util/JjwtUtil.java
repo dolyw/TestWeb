@@ -11,7 +11,7 @@ import java.util.Date;
  * @author Wang926454
  * @date 2018/8/31 9:47
  */
-public class JJWTUtil {
+public class JjwtUtil {
     /**
      * 过期时间-5分钟
      */

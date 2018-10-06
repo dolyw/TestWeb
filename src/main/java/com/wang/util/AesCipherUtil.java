@@ -17,7 +17,7 @@ import java.security.Security;
  * @author Wang926454
  * @date 2018/8/31 16:39
  */
-public class EncrypAESUtil {
+public class AesCipherUtil {
 
     /**
      * 私钥
@@ -28,7 +28,7 @@ public class EncrypAESUtil {
     /**
      * logger
      */
-    private static final Logger logger = LoggerFactory.getLogger(EncrypAESUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(AesCipherUtil.class);
 
     /**
      * 加密
@@ -37,19 +37,17 @@ public class EncrypAESUtil {
      * @author Wang926454
      * @date 2018/8/31 16:56
      */
-    public static String Encrytor(String str) {
+    public static String enCrypto(String str) {
         try{
             Security.addProvider(new com.sun.crypto.provider.SunJCE());
             // 实例化支持AES算法的密钥生成器(算法名称命名需按规定，否则抛出异常)
             // KeyGenerator 提供对称密钥生成器的功能，支持各种算法
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
-            // 获取私钥
-            String key = Base64ConvertUtil.decode(KEY);
-            // 将私钥key进行转换为byte[]数组按128位初始化
-            keygen.init(128, new SecureRandom(key.getBytes()));
+            // 将私钥key先Base64解密后转换为byte[]数组按128位初始化
+            keygen.init(128, new SecureRandom(Base64ConvertUtil.decode(KEY).getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
-            // 生成Cipher对象,指定其支持的AES算法，Cipher负责完成加密或解密工作
+            // 生成Cipher对象，指定其支持的AES算法，Cipher负责完成加密或解密工作
             Cipher c = Cipher.getInstance("AES");
             // 根据密钥，对Cipher对象进行初始化，ENCRYPT_MODE表示加密模式
             c.init(Cipher.ENCRYPT_MODE, deskey);
@@ -81,19 +79,17 @@ public class EncrypAESUtil {
      * @author Wang926454
      * @date 2018/8/31 16:56
      */
-    public static String Decryptor(String str) {
+    public static String deCrypto(String str) {
         try{
             Security.addProvider(new com.sun.crypto.provider.SunJCE());
             // 实例化支持AES算法的密钥生成器(算法名称命名需按规定，否则抛出异常)
             // KeyGenerator 提供对称密钥生成器的功能，支持各种算法
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
-            // 获取私钥
-            String key = Base64ConvertUtil.decode(KEY);
-            // 将私钥key进行转换为byte[]数组按128位初始化
-            keygen.init(128, new SecureRandom(key.getBytes()));
+            // 将私钥key先Base64解密后转换为byte[]数组按128位初始化
+            keygen.init(128, new SecureRandom(Base64ConvertUtil.decode(KEY).getBytes()));
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
-            // 生成Cipher对象,指定其支持的AES算法，Cipher负责完成加密或解密工作
+            // 生成Cipher对象，指定其支持的AES算法，Cipher负责完成加密或解密工作
             Cipher c = Cipher.getInstance("AES");
             // 根据密钥，对Cipher对象进行初始化，DECRYPT_MODE表示解密模式
             c.init(Cipher.DECRYPT_MODE, deskey);
