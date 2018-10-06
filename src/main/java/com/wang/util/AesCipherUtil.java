@@ -43,8 +43,11 @@ public class AesCipherUtil {
             // 实例化支持AES算法的密钥生成器(算法名称命名需按规定，否则抛出异常)
             // KeyGenerator 提供对称密钥生成器的功能，支持各种算法
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
+            // 防止Linux解密失败
+            SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
+            secureRandom.setSeed(Base64ConvertUtil.decode(KEY).getBytes());
             // 将私钥key先Base64解密后转换为byte[]数组按128位初始化
-            keygen.init(128, new SecureRandom(Base64ConvertUtil.decode(KEY).getBytes()));
+            keygen.init(128, secureRandom);
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
             // 生成Cipher对象，指定其支持的AES算法，Cipher负责完成加密或解密工作
@@ -85,8 +88,11 @@ public class AesCipherUtil {
             // 实例化支持AES算法的密钥生成器(算法名称命名需按规定，否则抛出异常)
             // KeyGenerator 提供对称密钥生成器的功能，支持各种算法
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
+            // 防止Linux解密失败
+            SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
+            secureRandom.setSeed(Base64ConvertUtil.decode(KEY).getBytes());
             // 将私钥key先Base64解密后转换为byte[]数组按128位初始化
-            keygen.init(128, new SecureRandom(Base64ConvertUtil.decode(KEY).getBytes()));
+            keygen.init(128, secureRandom);
             // SecretKey 负责保存对称密钥 生成密钥
             SecretKey deskey = keygen.generateKey();
             // 生成Cipher对象，指定其支持的AES算法，Cipher负责完成加密或解密工作
