@@ -337,7 +337,7 @@ public final class JedisUtil {
     }
 
     /**
-     * 模糊查询获取key集合
+     * 模糊查询获取key集合(keys的速度非常快，但在一个大的数据库中使用它仍然可能造成性能问题，生产不推荐使用)
      * @param key
      * @return java.util.Set<java.lang.String>
      * @author Wang926454
@@ -359,7 +359,7 @@ public final class JedisUtil {
     }
 
     /**
-     * 模糊查询获取key集合
+     * 模糊查询获取key集合(keys的速度非常快，但在一个大的数据库中使用它仍然可能造成性能问题，生产不推荐使用)
      * @param key
      * @return java.util.Set<java.lang.String>
      * @author Wang926454
@@ -387,7 +387,7 @@ public final class JedisUtil {
      * @author Wang926454
      * @date 2018/9/11 16:26
      */
-    public static Long getExpireTime(String key) {
+    public static Long ttl(String key) {
         Long result = -2L;
         Jedis jedis = null;
         try {
@@ -395,7 +395,7 @@ public final class JedisUtil {
             result = jedis.ttl(key);
             return result;
         } catch (Exception e) {
-            logger.error("获取Redis键过期剩余时间getExpireTime方法异常:key=" + key + " cause=" + e.getMessage());
+            logger.error("获取Redis键过期剩余时间ttl方法异常:key=" + key + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();

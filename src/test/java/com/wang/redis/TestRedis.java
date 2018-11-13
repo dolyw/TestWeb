@@ -78,7 +78,7 @@ public class TestRedis {
         System.out.println(JedisUtil.exists("item"));
         System.out.println(JedisUtil.setObject("wang", new Item(2, "hah"), 300));
         System.out.println(JedisUtil.getObject("wang"));
-        System.out.println(JedisUtil.getExpireTime("wang"));
+        System.out.println(JedisUtil.ttl("wang"));
     }
 
     @Test
@@ -86,7 +86,7 @@ public class TestRedis {
         // System.out.println(JedisUtil.setObject("item1", new Item(2, "hah")));
         // System.out.println(JedisUtil.getObject("item1").toString());
         // System.out.println(JedisUtil.delKey("item"));
-        System.out.println(JedisUtil.getExpireTime("shiro:refresh_token:wang"));
+        System.out.println(JedisUtil.ttl("shiro:refresh_token:wang"));
     }
 
     @Test
