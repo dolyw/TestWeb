@@ -1,5 +1,6 @@
 package com.wang.other;
 
+import com.wang.model.HttpCode;
 import org.junit.jupiter.api.Test;
 
 import java.text.DateFormat;
@@ -156,6 +157,12 @@ public class TestOther {
         String[] strArray = null;
         strArray = s.split(":"); //拆分字符为"," ,然后把结果交给数组strArray
         System.out.println(strArray[strArray.length - 1]);
+    }
+
+    @Test
+    public void t5(){
+        System.out.println(HttpCode.SUCCESS);
+        System.out.println(HttpCode.SUCCESS.code());
     }
 
 }
