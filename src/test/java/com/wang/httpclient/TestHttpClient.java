@@ -54,20 +54,20 @@ public class TestHttpClient {
             }*/
 
         } catch (UnsupportedOperationException | IOException e) {
-            e.printStackTrace();
+            e.getMessage();
         } finally {
             if (inputStream != null) {
                 try {
                     inputStream.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
             if (response != null) {
                 try {
                     response.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
 

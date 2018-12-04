@@ -32,14 +32,14 @@ public class PropertiesUtil {
             BufferedReader bf = new BufferedReader(new InputStreamReader(in));
             PROP.load(bf);
         } catch (IOException e){
-            e.printStackTrace();
+            e.getMessage();
         } finally {
             try{
                 if(in != null){
                     in.close();
                 }
             }catch (IOException e){
-                e.printStackTrace();
+                e.getMessage();
             }
         }
     }

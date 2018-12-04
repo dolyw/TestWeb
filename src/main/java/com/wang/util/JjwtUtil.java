@@ -32,7 +32,7 @@ public class JjwtUtil {
                     .parseClaimsJws(jsonWebToken).getBody();
             return claims;
         } catch (Exception e) {
-            e.printStackTrace();
+            e.getMessage();
         }
         return null;
     }

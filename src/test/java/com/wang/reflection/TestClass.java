@@ -127,7 +127,7 @@ public class TestClass {
                 System.out.println("*****************************");
             }
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
     }
 }

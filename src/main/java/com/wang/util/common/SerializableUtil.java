@@ -30,7 +30,7 @@ public class SerializableUtil {
             byte[] bytes = baos.toByteArray();
             return bytes;
         } catch (IOException e) {
-            e.printStackTrace();
+            e.getMessage();
         } finally {
             try {
                 if(oos != null) {
@@ -40,7 +40,7 @@ public class SerializableUtil {
                     baos.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                e.getMessage();
             }
         }
         return null;
@@ -61,9 +61,9 @@ public class SerializableUtil {
             ois = new ObjectInputStream(bais);
             return ois.readObject();
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            e.getMessage();
         } catch (IOException e) {
-            e.printStackTrace();
+            e.getMessage();
         } finally {
             try {
                 if(ois != null) {
@@ -73,7 +73,7 @@ public class SerializableUtil {
                     bais.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                e.getMessage();
             }
         }
         return null;

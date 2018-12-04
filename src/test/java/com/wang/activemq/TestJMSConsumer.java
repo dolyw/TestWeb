@@ -61,27 +61,27 @@ public class TestJMSConsumer {
                 }
             }
         }catch (Exception e){
-            e.printStackTrace();
+            e.getMessage();
         }finally {
             if(messageConsumer != null){
                 try {
                     messageConsumer.close();
                 }catch (Exception e){
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
             if(session != null){
                 try {
                     session.close();
                 }catch (Exception e){
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
             if(connection != null){
                 try {
                     connection.close();
                 }catch (Exception e){
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
         }

@@ -37,7 +37,7 @@ public class JwtUtil {
             DecodedJWT jwt = verifier.verify(token);
             return true;
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
         return false;
     }
@@ -55,7 +55,7 @@ public class JwtUtil {
             DecodedJWT jwt = JWT.decode(token);
             return jwt.getClaim(claim).asString();
         } catch (JWTDecodeException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
         return null;
     }
@@ -78,7 +78,7 @@ public class JwtUtil {
                     .withExpiresAt(date)
                     .sign(algorithm);
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
         return null;
     }

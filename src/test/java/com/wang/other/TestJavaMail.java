@@ -67,8 +67,8 @@ public class TestJavaMail {
             // 发送消息
             Transport.send(message);
             System.out.println("Sent message successfully");
-        }catch (MessagingException mex) {
-            mex.printStackTrace();
+        }catch (MessagingException e) {
+            e.getMessage();
         }
     }
 

@@ -59,27 +59,27 @@ public class TestJMSProducer {
             // 提交
             session.commit();
         }catch (Exception e){
-            e.printStackTrace();
+            e.getMessage();
         }finally {
             if(messageProducer != null){
                 try {
                     messageProducer.close();
                 }catch (Exception e){
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
             if(session != null){
                 try {
                     session.close();
                 }catch (Exception e){
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
             if(connection != null){
                 try {
                     connection.close();
                 }catch (Exception e){
-                    e.printStackTrace();
+                    e.getMessage();
                 }
             }
         }

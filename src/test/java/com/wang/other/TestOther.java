@@ -61,7 +61,7 @@ public class TestOther {
             Date date = df.parse(date1);
             System.out.println(this.differentHoursByMillisecond(new Date(), date));
         } catch (ParseException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
     }
 
@@ -144,7 +144,7 @@ public class TestOther {
             System.out.println("c");
             return;
         }catch (Exception e){
-            e.printStackTrace();
+            e.getMessage();
         }finally {
             System.out.println("finally");
         }

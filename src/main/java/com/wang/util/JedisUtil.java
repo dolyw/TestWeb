@@ -17,7 +17,10 @@ import java.util.Set;
  */
 public final class JedisUtil {
 
-    private static Logger logger = LoggerFactory.getLogger(JedisUtil.class);
+    /**
+     * LOGGER
+     */
+    private static final Logger LOGGER = LoggerFactory.getLogger(JedisUtil.class);
 
     /**
      * Redis服务器IP
@@ -99,9 +102,9 @@ public final class JedisUtil {
             config.setMaxWaitMillis(MAX_WAIT);
             config.setTestOnBorrow(TEST_ON_BORROW);
             jedisPool = new JedisPool(config, ADDR, PORT, TIMEOUT, AUTH);
-            logger.info("初始化Redis连接池JedisPool成功!" + " Redis地址: " + ADDR + ":" + PORT);
+            LOGGER.info("初始化Redis连接池JedisPool成功!" + " Redis地址: " + ADDR + ":" + PORT);
         } catch (Exception e) {
-            logger.error("初始化Redis连接池JedisPool异常:" + e.getMessage());
+            LOGGER.error("初始化Redis连接池JedisPool异常:" + e.getMessage());
         }
     }
 
@@ -121,7 +124,7 @@ public final class JedisUtil {
                 return null;
             }
         } catch (Exception e) {
-            logger.error("获取Jedis资源异常:" + e.getMessage());
+            LOGGER.error("获取Jedis资源异常:" + e.getMessage());
         }
         return null;
     }
@@ -137,7 +140,7 @@ public final class JedisUtil {
         try {
             jedisPool.close();
         }catch (Exception e){
-            logger.error("释放Jedis资源异常:" + e.getMessage());
+            LOGGER.error("释放Jedis资源异常:" + e.getMessage());
         }
     }
 
@@ -157,7 +160,7 @@ public final class JedisUtil {
                 return SerializableUtil.unserializable(bytes);
             }
         } catch (Exception e) {
-            logger.error("获取Redis键值getObject方法异常:key=" + key + " cause=" + e.getMessage());
+            LOGGER.error("获取Redis键值getObject方法异常:key=" + key + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();
@@ -180,7 +183,7 @@ public final class JedisUtil {
             jedis = jedisPool.getResource();
             return jedis.set(key.getBytes(), SerializableUtil.serializable(value));
         } catch (Exception e) {
-            logger.error("设置Redis键值setObject方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
+            LOGGER.error("设置Redis键值setObject方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();
@@ -209,7 +212,7 @@ public final class JedisUtil {
             }
             return result;
         } catch (Exception e) {
-            logger.error("设置Redis键值setObject方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
+            LOGGER.error("设置Redis键值setObject方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();
@@ -231,7 +234,7 @@ public final class JedisUtil {
             jedis = jedisPool.getResource();
             return jedis.get(key);
         } catch (Exception e) {
-            logger.error("获取Redis键值getJson方法异常:key=" + key + " cause=" + e.getMessage());
+            LOGGER.error("获取Redis键值getJson方法异常:key=" + key + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();
@@ -254,7 +257,7 @@ public final class JedisUtil {
             jedis = jedisPool.getResource();
             return jedis.set(key, value);
         } catch (Exception e) {
-            logger.error("设置Redis键值setJson方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
+            LOGGER.error("设置Redis键值setJson方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();
@@ -283,7 +286,7 @@ public final class JedisUtil {
             }
             return result;
         } catch (Exception e) {
-            logger.error("设置Redis键值setJson方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
+            LOGGER.error("设置Redis键值setJson方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();
@@ -305,7 +308,7 @@ public final class JedisUtil {
             jedis = jedisPool.getResource();
             return jedis.del(key.getBytes());
         }catch(Exception e) {
-            logger.error("删除Redis的键delKey方法异常:key=" + key + " cause=" + e.getMessage());
+            LOGGER.error("删除Redis的键delKey方法异常:key=" + key + " cause=" + e.getMessage());
         }finally{
             if(jedis != null) {
                 jedis.close();
@@ -327,7 +330,7 @@ public final class JedisUtil {
             jedis = jedisPool.getResource();
             return jedis.exists(key.getBytes());
         }catch(Exception e) {
-            logger.error("查询Redis的键是否存在exists方法异常:key=" + key + " cause=" + e.getMessage());
+            LOGGER.error("查询Redis的键是否存在exists方法异常:key=" + key + " cause=" + e.getMessage());
         }finally{
             if(jedis != null) {
                 jedis.close();
@@ -349,7 +352,7 @@ public final class JedisUtil {
             jedis = jedisPool.getResource();
             return jedis.keys(key);
         }catch(Exception e) {
-            logger.error("模糊查询Redis的键集合keysS方法异常:key=" + key + " cause=" + e.getMessage());
+            LOGGER.error("模糊查询Redis的键集合keysS方法异常:key=" + key + " cause=" + e.getMessage());
         }finally{
             if(jedis != null) {
                 jedis.close();
@@ -371,7 +374,7 @@ public final class JedisUtil {
             jedis = jedisPool.getResource();
             return jedis.keys(key.getBytes());
         }catch(Exception e) {
-            logger.error("模糊查询Redis的键集合keysB方法异常:key=" + key + " cause=" + e.getMessage());
+            LOGGER.error("模糊查询Redis的键集合keysB方法异常:key=" + key + " cause=" + e.getMessage());
         }finally{
             if(jedis != null) {
                 jedis.close();
@@ -395,7 +398,7 @@ public final class JedisUtil {
             result = jedis.ttl(key);
             return result;
         } catch (Exception e) {
-            logger.error("获取Redis键过期剩余时间ttl方法异常:key=" + key + " cause=" + e.getMessage());
+            LOGGER.error("获取Redis键过期剩余时间ttl方法异常:key=" + key + " cause=" + e.getMessage());
         } finally {
             if(jedis != null) {
                 jedis.close();
