@@ -152,19 +152,13 @@ public final class JedisUtil {
      * @date 2018/9/4 15:47
      */
     public static Object getObject(String key) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             byte[] bytes = jedis.get(key.getBytes());
-            if(StringUtil.isNotNull(bytes)) {
+            if (StringUtil.isNotNull(bytes)) {
                 return SerializableUtil.unserializable(bytes);
             }
         } catch (Exception e) {
             LOGGER.error("获取Redis键值getObject方法异常:key=" + key + " cause=" + e.getMessage());
-        } finally {
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -178,16 +172,10 @@ public final class JedisUtil {
      * @date 2018/9/4 15:49
      */
     public static String setObject(String key, Object value) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             return jedis.set(key.getBytes(), SerializableUtil.serializable(value));
         } catch (Exception e) {
             LOGGER.error("设置Redis键值setObject方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
-        } finally {
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -203,20 +191,14 @@ public final class JedisUtil {
      */
     public static String setObject(String key, Object value, int expiretime) {
         String result = "";
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.set(key.getBytes(), SerializableUtil.serializable(value));
-            if(OK.equals(result)) {
+            if (OK.equals(result)) {
                 jedis.expire(key.getBytes(), expiretime);
             }
             return result;
         } catch (Exception e) {
             LOGGER.error("设置Redis键值setObject方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
-        } finally {
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return result;
     }
@@ -229,16 +211,10 @@ public final class JedisUtil {
      * @date 2018/9/4 15:47
      */
     public static String getJson(String key) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             return jedis.get(key);
         } catch (Exception e) {
             LOGGER.error("获取Redis键值getJson方法异常:key=" + key + " cause=" + e.getMessage());
-        } finally {
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -252,16 +228,10 @@ public final class JedisUtil {
      * @date 2018/9/4 15:49
      */
     public static String setJson(String key, String value) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             return jedis.set(key, value);
         } catch (Exception e) {
             LOGGER.error("设置Redis键值setJson方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
-        } finally {
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -277,20 +247,14 @@ public final class JedisUtil {
      */
     public static String setJson(String key, String value, int expiretime) {
         String result = "";
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.set(key, value);
-            if(OK.equals(result)) {
+            if (OK.equals(result)) {
                 jedis.expire(key, expiretime);
             }
             return result;
         } catch (Exception e) {
             LOGGER.error("设置Redis键值setJson方法异常:key=" + key + " value=" + value + " cause=" + e.getMessage());
-        } finally {
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return result;
     }
@@ -303,16 +267,10 @@ public final class JedisUtil {
      * @date 2018/9/4 15:50
      */
     public static Long delKey(String key) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             return jedis.del(key.getBytes());
-        }catch(Exception e) {
+        } catch (Exception e) {
             LOGGER.error("删除Redis的键delKey方法异常:key=" + key + " cause=" + e.getMessage());
-        }finally{
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -325,16 +283,10 @@ public final class JedisUtil {
      * @date 2018/9/4 15:51
      */
     public static Boolean exists(String key) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             return jedis.exists(key.getBytes());
-        }catch(Exception e) {
+        } catch (Exception e) {
             LOGGER.error("查询Redis的键是否存在exists方法异常:key=" + key + " cause=" + e.getMessage());
-        }finally{
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -347,16 +299,10 @@ public final class JedisUtil {
      * @date 2018/9/6 9:43
      */
     public static Set<String> keysS(String key) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             return jedis.keys(key);
-        }catch(Exception e) {
+        } catch (Exception e) {
             LOGGER.error("模糊查询Redis的键集合keysS方法异常:key=" + key + " cause=" + e.getMessage());
-        }finally{
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -369,16 +315,10 @@ public final class JedisUtil {
      * @date 2018/9/6 9:43
      */
     public static Set<byte[]> keysB(String key) {
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             return jedis.keys(key.getBytes());
-        }catch(Exception e) {
+        } catch (Exception e) {
             LOGGER.error("模糊查询Redis的键集合keysB方法异常:key=" + key + " cause=" + e.getMessage());
-        }finally{
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return null;
     }
@@ -392,17 +332,11 @@ public final class JedisUtil {
      */
     public static Long ttl(String key) {
         Long result = -2L;
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.ttl(key);
             return result;
         } catch (Exception e) {
             LOGGER.error("获取Redis键过期剩余时间ttl方法异常:key=" + key + " cause=" + e.getMessage());
-        } finally {
-            if(jedis != null) {
-                jedis.close();
-            }
         }
         return result;
     }

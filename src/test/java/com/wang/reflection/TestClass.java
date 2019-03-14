@@ -25,7 +25,7 @@ public class TestClass {
     @Test
     public void Class(){
         User user = new User();
-        List list = this.getFiledsInfo(user);
+        List<Map<String, Object>> list = this.getFiledsInfo(user);
         System.out.println(list);
     }
 
@@ -36,9 +36,8 @@ public class TestClass {
         try {
             String firstLetter = fieldName.substring(0, 1).toUpperCase();
             String getter = "get" + firstLetter + fieldName.substring(1);
-            Method method = o.getClass().getMethod(getter, new Class[] {});
-            Object value = method.invoke(o, new Object[] {});
-            return value;
+            Method method = o.getClass().getMethod(getter);
+            return method.invoke(o);
         } catch (Exception e) {
             //log.error(e.getMessage(),e);
             return null;
@@ -62,19 +61,19 @@ public class TestClass {
      * 获取属性类型(type)，属性名(name)，属性值(value)的map组成的list
      * 无法获取继承类的私有属性
      * */
-    private List getFiledsInfo(Object o){
+    private List<Map<String, Object>> getFiledsInfo(Object o){
         Field[] fields=o.getClass().getDeclaredFields();
         String[] fieldNames=new String[fields.length];
-        List list = new ArrayList();
-        Map infoMap=null;
-        for(int i=0;i<fields.length;i++){
-            if(fields[i].getName().equals("serialVersionUID")){
+        List<Map<String, Object>> list = new ArrayList<>();
+        Map<String, Object> infoMap;
+        for (Field field : fields) {
+            if (field.getName().equals("serialVersionUID")) {
                 continue;
             }
-            infoMap = new HashMap();
-            infoMap.put("type", fields[i].getType().toString());
-            infoMap.put("name", fields[i].getName());
-            infoMap.put("value", getFieldValueByName(fields[i].getName(), o));
+            infoMap = new HashMap<String, Object>();
+            infoMap.put("type", field.getType().toString());
+            infoMap.put("name", field.getName());
+            infoMap.put("value", getFieldValueByName(field.getName(), o));
             list.add(infoMap);
         }
         return list;

@@ -93,7 +93,7 @@ public class TestRedis {
     public void TestJedisUtil03(){
         Item item = new Item(2, "hah");
         System.out.println(JedisUtil.setJson("item", JsonConvertUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
-        System.out.println(JedisUtil.getJson("item").toString());
+        System.out.println(JedisUtil.getJson("item"));
         System.out.println(JedisUtil.exists("item"));
     }
 
