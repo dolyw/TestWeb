@@ -23,7 +23,7 @@ public class TestClass {
      * @Date 2018/7/27 10:35
      */
     @Test
-    public void Class(){
+    public void Class() {
         User user = new User();
         List<Map<String, Object>> list = this.getFiledsInfo(user);
         System.out.println(list);
@@ -31,7 +31,7 @@ public class TestClass {
 
     /**
      * 根据属性名获取属性值
-     * */
+     */
     private Object getFieldValueByName(String fieldName, Object o) {
         try {
             String firstLetter = fieldName.substring(0, 1).toUpperCase();
@@ -46,13 +46,13 @@ public class TestClass {
 
     /**
      * 获取属性名数组
-     * */
-    private String[] getFiledName(Object o){
-        Field[] fields=o.getClass().getDeclaredFields();
-        String[] fieldNames=new String[fields.length];
-        for(int i=0;i<fields.length;i++){
+     */
+    private String[] getFiledName(Object o) {
+        Field[] fields = o.getClass().getDeclaredFields();
+        String[] fieldNames = new String[fields.length];
+        for (int i = 0; i < fields.length; i++) {
             System.out.println(fields[i].getType());
-            fieldNames[i]=fields[i].getName();
+            fieldNames[i] = fields[i].getName();
         }
         return fieldNames;
     }
@@ -60,10 +60,10 @@ public class TestClass {
     /**
      * 获取属性类型(type)，属性名(name)，属性值(value)的map组成的list
      * 无法获取继承类的私有属性
-     * */
-    private List<Map<String, Object>> getFiledsInfo(Object o){
-        Field[] fields=o.getClass().getDeclaredFields();
-        String[] fieldNames=new String[fields.length];
+     */
+    private List<Map<String, Object>> getFiledsInfo(Object o) {
+        Field[] fields = o.getClass().getDeclaredFields();
+        String[] fieldNames = new String[fields.length];
         List<Map<String, Object>> list = new ArrayList<>();
         Map<String, Object> infoMap;
         for (Field field : fields) {
@@ -81,12 +81,12 @@ public class TestClass {
 
     /**
      * 获取对象的所有属性值，返回一个对象数组
-     * */
-    public Object[] getFiledValues(Object o){
-        String[] fieldNames=this.getFiledName(o);
-        Object[] value=new Object[fieldNames.length];
-        for(int i=0;i<fieldNames.length;i++){
-            value[i]=this.getFieldValueByName(fieldNames[i], o);
+     */
+    public Object[] getFiledValues(Object o) {
+        String[] fieldNames = this.getFiledName(o);
+        Object[] value = new Object[fieldNames.length];
+        for (int i = 0; i < fieldNames.length; i++) {
+            value[i] = this.getFieldValueByName(fieldNames[i], o);
         }
         return value;
     }
@@ -97,12 +97,12 @@ public class TestClass {
      * @Date 2018/7/27 10:35
      */
     @Test
-    public void Class2(){
+    public void Class2() {
         getMethodInfo("java.util.HashSet");
     }
 
     @Test
-    public void Class3(){
+    public void Class3() {
         getMethodInfo("com.wang.model.User");
     }
 
