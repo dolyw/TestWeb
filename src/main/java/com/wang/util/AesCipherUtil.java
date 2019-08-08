@@ -26,9 +26,9 @@ public class AesCipherUtil {
     // private static final byte[] KEY = { 1, 1, 33, 82, -32, -85, -128, -65 };
 
     /**
-     * LOGGER
+     * logger
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(AesCipherUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(AesCipherUtil.class);
 
     /**
      * 加密
@@ -60,17 +60,17 @@ public class AesCipherUtil {
             // 先将二进制转换成16进制，再返回Bsae64加密后的String
             return Base64ConvertUtil.encode(HexConvertUtil.parseByte2HexStr(cipherByte));
         } catch (NoSuchAlgorithmException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (UnsupportedEncodingException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (NoSuchPaddingException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (InvalidKeyException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (IllegalBlockSizeException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (BadPaddingException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         }
         return null;
     }
@@ -103,17 +103,17 @@ public class AesCipherUtil {
             byte[] cipherByte = c.doFinal(HexConvertUtil.parseHexStr2Byte(Base64ConvertUtil.decode(str)));
             return new String(cipherByte);
         } catch (NoSuchAlgorithmException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (UnsupportedEncodingException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (NoSuchPaddingException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (InvalidKeyException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (IllegalBlockSizeException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         } catch (BadPaddingException e){
-            LOGGER.error(e.getMessage());
+            logger.error(e.getMessage());
         }
         return null;
     }
