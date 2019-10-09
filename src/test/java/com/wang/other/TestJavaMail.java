@@ -12,13 +12,13 @@ import java.util.Properties;
 
 /**
  * JaveMail
+ *
  * @author Wang926454
  * @date 2018/9/14 14:28
  */
 public class TestJavaMail {
 
     /**
-     *
      * @param
      * @return void
      * @author Wang926454
@@ -47,13 +47,13 @@ public class TestJavaMail {
         // properties.put("mail.smtp.ssl.enable", "true");
         // properties.put("mail.smtp.ssl.socketFactory", sf);
         // 获取默认session对象
-        Session session = Session.getDefaultInstance(properties,new Authenticator(){
+        Session session = Session.getDefaultInstance(properties, new Authenticator() {
             public PasswordAuthentication getPasswordAuthentication() {
                 // 发件人邮件用户名、密码
                 return new PasswordAuthentication("wang9264541@outlook.com", "");
             }
         });
-        try{
+        try {
             // 创建默认的 MimeMessage 对象
             MimeMessage message = new MimeMessage(session);
             // Set From: 头部头字段
@@ -67,13 +67,13 @@ public class TestJavaMail {
             // 发送消息
             Transport.send(message);
             System.out.println("Sent message successfully");
-        }catch (MessagingException e) {
+        } catch (MessagingException e) {
             e.getMessage();
         }
     }
 
     @Test
-    public void Test2(){
+    public void Test2() {
         String mailHost = "smtp.qq.com";
         String type = "SSL";
         String loginAccount = "1107224733@qq.com";
@@ -86,13 +86,13 @@ public class TestJavaMail {
     }
 
     @Test
-    public void Test3(){
+    public void Test3() {
         String mailHost = "smtp-mail.outlook.com";
         String type = "TLS";
         String loginAccount = "wang9264541@outlook.com";
         String loginAuthCode = "9";
         String name = "学长";
-        String[] recipients = new String[]{"1107224733@qq.com","wangldsz@sinosoft.com.cn"};
+        String[] recipients = new String[]{"1107224733@qq.com", "wangldsz@sinosoft.com.cn"};
         String mailSubject = "节日祝福";
         String mailContent = "节日快乐";
         JavaMailUtil.sendEmail(mailHost, type, loginAccount, loginAuthCode, name, recipients, mailSubject, mailContent);

@@ -20,14 +20,14 @@ public class TestJMSConsumer {
     private static final String URL = ActiveMQConnection.DEFAULT_BROKER_URL;
 
     @Test
-    public void printActiveMQConnection(){
+    public void printActiveMQConnection() {
         System.out.println(USERNAME);
         System.out.println(PASSWORD);
         System.out.println(URL);
     }
 
     @Test
-    public void consumer(){
+    public void consumer() {
         // 连接工厂
         ConnectionFactory connectionFactory;
         // 连接
@@ -54,33 +54,33 @@ public class TestJMSConsumer {
             // 接收消息
             while (true) {
                 TextMessage textMessage = (TextMessage) messageConsumer.receive(100000);
-                if(textMessage != null){
+                if (textMessage != null) {
                     System.out.println("接收" + textMessage.getText());
-                }else {
+                } else {
                     break;
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
-        }finally {
-            if(messageConsumer != null){
+        } finally {
+            if (messageConsumer != null) {
                 try {
                     messageConsumer.close();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getMessage();
                 }
             }
-            if(session != null){
+            if (session != null) {
                 try {
                     session.close();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getMessage();
                 }
             }
-            if(connection != null){
+            if (connection != null) {
                 try {
                     connection.close();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getMessage();
                 }
             }

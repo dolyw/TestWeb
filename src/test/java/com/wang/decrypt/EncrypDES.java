@@ -7,6 +7,7 @@ import java.security.Security;
 
 /**
  * DES
+ *
  * @author Wang926454
  * @date 2018/8/21 15:20
  */
@@ -32,6 +33,7 @@ public class EncrypDES {
 
     /**
      * 加密
+     *
      * @param str
      * @return byte[]
      * @author Wang926454
@@ -49,6 +51,7 @@ public class EncrypDES {
 
     /**
      * 解密
+     *
      * @param buff
      * @return byte[]
      * @author Wang926454
@@ -64,6 +67,7 @@ public class EncrypDES {
 
     /**
      * 测试
+     *
      * @param args
      * @return void
      * @author Wang926454

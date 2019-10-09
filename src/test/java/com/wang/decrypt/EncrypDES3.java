@@ -7,6 +7,7 @@ import java.security.Security;
 
 /**
  * DES3
+ *
  * @author Wang926454
  * @date 2018/8/21 15:18
  */
@@ -29,9 +30,10 @@ public class EncrypDES3 {
         // 生成Cipher对象,指定其支持的DES3算法
         c = Cipher.getInstance("DESede");
     }
-    
+
     /**
      * 加密
+     *
      * @param str
      * @return byte[]
      * @author Wang926454
@@ -46,9 +48,10 @@ public class EncrypDES3 {
         cipherByte = c.doFinal(src);
         return cipherByte;
     }
-    
+
     /**
      * 解密
+     *
      * @param buff
      * @return byte[]
      * @author Wang926454
@@ -61,9 +64,10 @@ public class EncrypDES3 {
         cipherByte = c.doFinal(buff);
         return cipherByte;
     }
-    
+
     /**
      * 测试
+     *
      * @param args
      * @return void
      * @author Wang926454
@@ -71,7 +75,7 @@ public class EncrypDES3 {
      */
     public static void main(String[] args) throws Exception {
         EncrypDES3 des = new EncrypDES3();
-        String msg ="dsadsa";
+        String msg = "dsadsa";
         byte[] encontent = des.Encrytor(msg);
         byte[] decontent = des.Decryptor(encontent);
         System.out.println("明文是:" + msg);

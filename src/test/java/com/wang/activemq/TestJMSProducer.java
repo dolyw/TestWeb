@@ -20,14 +20,14 @@ public class TestJMSProducer {
     private static final String URL = ActiveMQConnection.DEFAULT_BROKER_URL;
 
     @Test
-    public void printActiveMQConnection(){
+    public void printActiveMQConnection() {
         System.out.println(USERNAME);
         System.out.println(PASSWORD);
         System.out.println(URL);
     }
 
     @Test
-    public void producer(){
+    public void producer() {
         // 连接工厂
         ConnectionFactory connectionFactory;
         // 连接
@@ -58,27 +58,27 @@ public class TestJMSProducer {
             System.out.println("发送ActiveMQ第2条");
             // 提交
             session.commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
-        }finally {
-            if(messageProducer != null){
+        } finally {
+            if (messageProducer != null) {
                 try {
                     messageProducer.close();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getMessage();
                 }
             }
-            if(session != null){
+            if (session != null) {
                 try {
                     session.close();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getMessage();
                 }
             }
-            if(connection != null){
+            if (connection != null) {
                 try {
                     connection.close();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getMessage();
                 }
             }

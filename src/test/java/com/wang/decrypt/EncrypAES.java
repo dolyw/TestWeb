@@ -11,6 +11,7 @@ import java.security.Security;
 
 /**
  * AES
+ *
  * @author Wang926454
  * @date 2018/8/21 15:14
  */
@@ -18,7 +19,7 @@ public class EncrypAES {
     /**
      * 密钥
      */
-    private static final byte[] KEY = { 21, 1, 33, 82, -32, -85, -128, -65 };
+    private static final byte[] KEY = {21, 1, 33, 82, -32, -85, -128, -65};
 
     // KeyGenerator 提供对称密钥生成器的功能，支持各种算法
     private KeyGenerator keygen;
@@ -43,9 +44,10 @@ public class EncrypAES {
         // 生成Cipher对象,指定其支持的AES算法
         c = Cipher.getInstance("AES");
     }
-    
+
     /**
      * 加密
+     *
      * @param str
      * @return byte[]
      * @author Wang926454
@@ -60,9 +62,10 @@ public class EncrypAES {
         cipherByte = c.doFinal(src);
         return cipherByte;
     }
-    
+
     /**
      * 解密
+     *
      * @param buff
      * @return byte[]
      * @author Wang926454
@@ -75,9 +78,10 @@ public class EncrypAES {
         cipherByte = c.doFinal(buff);
         return cipherByte;
     }
-    
+
     /**
      * 测试
+     *
      * @param args
      * @return void
      * @author Wang926454
@@ -85,7 +89,7 @@ public class EncrypAES {
      */
     public static void main(String[] args) throws Exception {
         EncrypAES de1 = new EncrypAES();
-        String msg ="dhdslkaflkf";
+        String msg = "dhdslkaflkf";
         byte[] encontent = de1.Encrytor(msg);
         byte[] decontent = de1.Decryptor(encontent);
         System.out.println("明文是:" + msg);

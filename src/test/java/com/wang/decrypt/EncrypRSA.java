@@ -13,6 +13,7 @@ import java.security.interfaces.RSAPublicKey;
 
 /**
  * RSA
+ *
  * @author Wang926454
  * @date 2018/8/21 15:11
  */
@@ -20,8 +21,9 @@ public class EncrypRSA {
 
     /**
      * 加密
+     *
      * @param publicKey
-	 * @param srcBytes
+     * @param srcBytes
      * @return byte[]
      * @author Wang926454
      * @date 2018/8/21 15:13
@@ -37,11 +39,12 @@ public class EncrypRSA {
         }
         return null;
     }
-    
+
     /**
      * 解密
+     *
      * @param privateKey
-	 * @param srcBytes
+     * @param srcBytes
      * @return byte[]
      * @author Wang926454
      * @date 2018/8/21 15:13
@@ -60,6 +63,7 @@ public class EncrypRSA {
 
     /**
      * 测试
+     *
      * @param args
      * @return void
      * @author Wang926454

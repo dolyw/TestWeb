@@ -18,28 +18,28 @@ import java.util.Set;
  */
 public class TestRedis {
     @Test
-    public void start(){
+    public void start() {
         //连接本地的 Redis 服务
         Jedis jedis = new Jedis("localhost");
         System.out.println("连接成功");
         //查看服务是否运行
-        System.out.println("服务正在运行: "+jedis.ping());
+        System.out.println("服务正在运行: " + jedis.ping());
     }
 
     @Test
-    public void TestString(){
+    public void TestString() {
         //连接本地的 Redis 服务
         Jedis jedis = new Jedis("localhost");
         System.out.println("连接成功");
         //设置 redis 字符串数据
         jedis.set("runoobkey", "www.runoob.com");
         // 获取存储的数据并输出
-        System.out.println("redis 存储的字符串为: "+ jedis.get("runoobkey"));
-        System.out.println("redis 存储的字符串为: "+ jedis.get("name"));
+        System.out.println("redis 存储的字符串为: " + jedis.get("runoobkey"));
+        System.out.println("redis 存储的字符串为: " + jedis.get("name"));
     }
 
     @Test
-    public void TestList(){
+    public void TestList() {
         //连接本地的 Redis 服务
         Jedis jedis = new Jedis("localhost");
         System.out.println("连接成功");
@@ -48,33 +48,33 @@ public class TestRedis {
         jedis.lpush("site-list", "Google");
         jedis.lpush("site-list", "Taobao");
         // 获取存储的数据并输出
-        List<String> list = jedis.lrange("site-list", 0 ,2);
-        for(int i=0; i<list.size(); i++) {
-            System.out.println("列表项为: "+list.get(i));
+        List<String> list = jedis.lrange("site-list", 0, 2);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("列表项为: " + list.get(i));
         }
-        List<String> list2 = jedis.lrange("list", 0 ,2);
-        for(int i=0; i<list2.size(); i++) {
-            System.out.println("列表项为: "+list2.get(i));
+        List<String> list2 = jedis.lrange("list", 0, 2);
+        for (int i = 0; i < list2.size(); i++) {
+            System.out.println("列表项为: " + list2.get(i));
         }
     }
 
     @Test
-    public void TestSet(){
+    public void TestSet() {
         //连接本地的 Redis 服务
         Jedis jedis = new Jedis("localhost");
         System.out.println("连接成功");
 
         // 获取数据并输出
         Set<String> keys = jedis.keys("*");
-        Iterator<String> it=keys.iterator() ;
-        while(it.hasNext()){
+        Iterator<String> it = keys.iterator();
+        while (it.hasNext()) {
             String key = it.next();
             System.out.println(key);
         }
     }
 
     @Test
-    public void TestJedisUtil01(){
+    public void TestJedisUtil01() {
         System.out.println(JedisUtil.exists("item"));
         System.out.println(JedisUtil.setObject("wang", new Item(2, "hah"), 300));
         System.out.println(JedisUtil.getObject("wang"));
@@ -82,7 +82,7 @@ public class TestRedis {
     }
 
     @Test
-    public void TestJedisUtil02(){
+    public void TestJedisUtil02() {
         // System.out.println(JedisUtil.setObject("item1", new Item(2, "hah")));
         // System.out.println(JedisUtil.getObject("item1").toString());
         // System.out.println(JedisUtil.delKey("item"));
@@ -90,7 +90,7 @@ public class TestRedis {
     }
 
     @Test
-    public void TestJedisUtil03(){
+    public void TestJedisUtil03() {
         Item item = new Item(2, "hah");
         System.out.println(JedisUtil.setJson("item", JsonConvertUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
         System.out.println(JedisUtil.getJson("item"));
@@ -98,7 +98,7 @@ public class TestRedis {
     }
 
     @Test
-    public void TestJedisUtil04(){
+    public void TestJedisUtil04() {
         Item item = new Item(2, "hah");
         // System.out.println(JedisUtil.setJson("item", JsonConvertUtil.objectToJson(item), JedisUtil.EXRP_MINUTE));
         System.out.println(JedisUtil.exists("item"));
@@ -106,11 +106,11 @@ public class TestRedis {
     }
 
     @Test
-    public void TestJedisUtil05(){
+    public void TestJedisUtil05() {
         Set<String> keys = JedisUtil.keysS("shiro:test:*");
         List<String> list = new ArrayList<String>();
         for (String s : keys) {
-            if(JedisUtil.exists(s)){
+            if (JedisUtil.exists(s)) {
                 list.add(JedisUtil.getJson(s).toString());
             }
         }

@@ -18,7 +18,7 @@ import java.util.*;
 public class TestUtil {
 
     @Test
-    public void String(){
+    public void String() {
         String s2 = "dsa_dsad_dd";
         System.out.println(StringUtil.addSingleQuotes(s2));
         System.out.println(StringUtil.underlineToCamel(s2));
@@ -26,7 +26,7 @@ public class TestUtil {
     }
 
     @Test
-    public void String2(){
+    public void String2() {
         System.out.println(RandomUtil.getCode());
         System.out.println(RandomUtil.getName());
         System.out.println(RandomUtil.getRandom());
@@ -34,7 +34,7 @@ public class TestUtil {
     }
 
     @Test
-    public void String3(){
+    public void String3() {
         Map<String, Object> map = new HashMap<String, Object>(16);
         map.put("code", "012121");
         map.put("status", 1);
@@ -47,7 +47,7 @@ public class TestUtil {
     }
 
     @Test
-    public void String4(){
+    public void String4() {
         List<Item> itemList = new ArrayList<Item>();
         itemList.add(new Item(1, "wang"));
         String listJson = JsonConvertUtil.objectToJson(itemList);
@@ -59,7 +59,7 @@ public class TestUtil {
     }
 
     @Test
-    public void String6(){
+    public void String6() {
         String s1 = "abcd";
         String s2 = "def";
         System.out.println(EditDistanceUtil.getSimilarityRatio(s1, s2));

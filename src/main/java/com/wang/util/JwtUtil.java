@@ -11,6 +11,7 @@ import java.util.Date;
 
 /**
  * JAVA-JWT工具类
+ *
  * @author Wang926454
  * @date 2018/8/30 11:45
  */
@@ -23,8 +24,9 @@ public class JwtUtil {
 
     /**
      * 校验token是否正确
-     * @param token Token
-	 * @param secret 私钥
+     *
+     * @param token  Token
+     * @param secret 私钥
      * @return boolean 是否正确
      * @author Wang926454
      * @date 2018/8/31 9:05
@@ -44,8 +46,9 @@ public class JwtUtil {
 
     /**
      * 获得Token中的信息无需secret解密也能获得
+     *
      * @param token
-	 * @param claim
+     * @param claim
      * @return java.lang.String
      * @author Wang926454
      * @date 2018/9/7 17:01
@@ -62,8 +65,9 @@ public class JwtUtil {
 
     /**
      * 生成签名
+     *
      * @param account 帐号
-	 * @param secret 私钥
+     * @param secret  私钥
      * @return java.lang.String 返回加密的Token
      * @author Wang926454
      * @date 2018/8/31 9:07

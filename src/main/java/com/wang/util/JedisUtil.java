@@ -12,6 +12,7 @@ import java.util.Set;
 
 /**
  * JedisUtil(推荐存Byte数组，存Json字符串效率更慢)
+ *
  * @author Wang926454
  * @date 2018/9/4 15:45
  */
@@ -111,7 +112,8 @@ public final class JedisUtil {
 
     /**
      * 获取Jedis实例
-     * @param 
+     *
+     * @param
      * @return redis.clients.jedis.Jedis
      * @author Wang926454
      * @date 2018/9/4 15:47
@@ -132,7 +134,8 @@ public final class JedisUtil {
 
     /**
      * 释放Jedis资源
-     * @param 
+     *
+     * @param
      * @return void
      * @author Wang926454
      * @date 2018/9/5 9:16
@@ -140,13 +143,14 @@ public final class JedisUtil {
     public static void closePool() {
         try {
             jedisPool.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("释放Jedis资源异常:" + e.getMessage());
         }
     }
 
     /**
      * 获取redis键值-object
+     *
      * @param key
      * @return java.lang.Object
      * @author Wang926454
@@ -166,8 +170,9 @@ public final class JedisUtil {
 
     /**
      * 设置redis键值-object
+     *
      * @param key
-	 * @param value
+     * @param value
      * @return java.lang.String
      * @author Wang926454
      * @date 2018/9/4 15:49
@@ -183,9 +188,10 @@ public final class JedisUtil {
 
     /**
      * 设置redis键值-object-expiretime
+     *
      * @param key
-	 * @param value
-	 * @param expiretime
+     * @param value
+     * @param expiretime
      * @return java.lang.String
      * @author Wang926454
      * @date 2018/9/4 15:50
@@ -206,6 +212,7 @@ public final class JedisUtil {
 
     /**
      * 获取redis键值-Json
+     *
      * @param key
      * @return java.lang.Object
      * @author Wang926454
@@ -222,6 +229,7 @@ public final class JedisUtil {
 
     /**
      * 设置redis键值-Json
+     *
      * @param key
      * @param value
      * @return java.lang.String
@@ -239,6 +247,7 @@ public final class JedisUtil {
 
     /**
      * 设置redis键值-Json-expiretime
+     *
      * @param key
      * @param value
      * @param expiretime
@@ -262,6 +271,7 @@ public final class JedisUtil {
 
     /**
      * 删除key
+     *
      * @param key
      * @return java.lang.Long
      * @author Wang926454
@@ -278,6 +288,7 @@ public final class JedisUtil {
 
     /**
      * key是否存在
+     *
      * @param key
      * @return java.lang.Boolean
      * @author Wang926454
@@ -294,6 +305,7 @@ public final class JedisUtil {
 
     /**
      * 模糊查询获取key集合(keys的速度非常快，但在一个大的数据库中使用它仍然可能造成性能问题，生产不推荐使用)
+     *
      * @param key
      * @return java.util.Set<java.lang.String>
      * @author Wang926454
@@ -310,6 +322,7 @@ public final class JedisUtil {
 
     /**
      * 模糊查询获取key集合(keys的速度非常快，但在一个大的数据库中使用它仍然可能造成性能问题，生产不推荐使用)
+     *
      * @param key
      * @return java.util.Set<java.lang.String>
      * @author Wang926454
@@ -326,6 +339,7 @@ public final class JedisUtil {
 
     /**
      * 获取过期剩余时间
+     *
      * @param key
      * @return java.lang.String
      * @author Wang926454

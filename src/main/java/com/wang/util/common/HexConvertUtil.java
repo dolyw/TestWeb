@@ -2,6 +2,7 @@ package com.wang.util.common;
 
 /**
  * 进制转换工具
+ *
  * @author Wang926454
  * @date 2018/8/31 17:23
  */
@@ -19,6 +20,7 @@ public class HexConvertUtil {
 
     /**
      * 将二进制转换成16进制
+     *
      * @param bytes
      * @return java.lang.String
      * @author Wang926454
@@ -38,17 +40,18 @@ public class HexConvertUtil {
 
     /**
      * 将16进制转换为二进制
+     *
      * @param hexStr
      * @return byte[]
      * @author Wang926454
      * @date 2018/8/31 17:21
      */
     public static byte[] parseHexStr2Byte(String hexStr) {
-        if (hexStr.length() < INTEGER_1){
+        if (hexStr.length() < INTEGER_1) {
             return null;
         }
         byte[] result = new byte[hexStr.length() / INTEGER_2];
-        for (int i = 0, len = hexStr.length() / INTEGER_2;i < len; i++) {
+        for (int i = 0, len = hexStr.length() / INTEGER_2; i < len; i++) {
             int high = Integer.parseInt(hexStr.substring(i * 2, i * 2 + 1), 16);
             int low = Integer.parseInt(hexStr.substring(i * 2 + 1, i * 2 + 2), 16);
             result[i] = (byte) (high * 16 + low);

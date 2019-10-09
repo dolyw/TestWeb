@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * SHA
+ *
  * @author Wang926454
  * @date 2018/8/21 15:08
  */
@@ -12,6 +13,7 @@ public class EncrypSHA {
 
     /**
      * 加密
+     *
      * @param info
      * @return byte[]
      * @author Wang926454
@@ -29,6 +31,7 @@ public class EncrypSHA {
 
     /**
      * 测试
+     *
      * @param args
      * @return void
      * @author Wang926454

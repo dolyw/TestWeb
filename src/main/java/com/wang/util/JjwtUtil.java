@@ -4,10 +4,12 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+
 import java.util.Date;
 
 /**
  * JJWT工具类
+ *
  * @author Wang926454
  * @date 2018/8/31 9:47
  */
@@ -19,8 +21,9 @@ public class JjwtUtil {
 
     /**
      * 校验token是否正确
+     *
      * @param jsonWebToken
-	 * @param base64Security
+     * @param base64Security
      * @return io.jsonwebtoken.Claims
      * @author Wang926454
      * @date 2018/8/31 10:03
@@ -39,8 +42,9 @@ public class JjwtUtil {
 
     /**
      * 生成签名，获取Token
+     *
      * @param username
-	 * @param base64Security
+     * @param base64Security
      * @return java.lang.String
      * @author Wang926454
      * @date 2018/8/31 10:03

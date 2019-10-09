@@ -1,11 +1,13 @@
 package com.wang.decrypt;
 
 import java.util.Base64;
+
 import sun.misc.BASE64Encoder;
 import sun.misc.BASE64Decoder;
 
 /**
  * Base64
+ *
  * @author Wang926454
  * @date 2018/8/21 15:14
  */
@@ -13,6 +15,7 @@ public class EncrypBase64 {
 
     /**
      * 加密JDK1.8
+     *
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -25,6 +28,7 @@ public class EncrypBase64 {
 
     /**
      * 解密JDK1.8
+     *
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -37,6 +41,7 @@ public class EncrypBase64 {
 
     /**
      * 加密JDK1.7
+     *
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -48,6 +53,7 @@ public class EncrypBase64 {
 
     /**
      * 解密JDK1.7
+     *
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -55,11 +61,12 @@ public class EncrypBase64 {
      */
     public static String decode7(String str) throws Exception {
         byte[] b = new BASE64Decoder().decodeBuffer(str);
-        return new String(b,"utf-8");
+        return new String(b, "utf-8");
     }
-    
+
     /**
      * 测试
+     *
      * @param args
      * @return void
      * @author Wang926454
@@ -67,7 +74,7 @@ public class EncrypBase64 {
      */
     public static void main(String[] args) throws Exception {
         EncrypBase64 de1 = new EncrypBase64();
-        String msg ="1、同一保险期限内，每一被保险人限购一份，多买无效。\n" +
+        String msg = "1、同一保险期限内，每一被保险人限购一份，多买无效。\n" +
                 "Within the same period of insurance, each insured person is restricted to one purchase. Any additional purchase shall be invalid.\n" +
                 "2、被保险人的承保年龄为出生满30天（含）至80周岁（含）。\n" +
                 "Coverage of the insured person's age is 30 days （including 30 days） to 80 years of age （including）.\n" +

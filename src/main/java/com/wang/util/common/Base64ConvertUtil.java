@@ -5,6 +5,7 @@ import java.util.Base64;
 
 /**
  * Base64工具
+ *
  * @author Wang926454
  * @date 2018/8/21 15:14
  */
@@ -12,6 +13,7 @@ public class Base64ConvertUtil {
 
     /**
      * 加密JDK1.8
+     *
      * @param str
      * @return java.lang.String
      * @author Wang926454
@@ -24,6 +26,7 @@ public class Base64ConvertUtil {
 
     /**
      * 解密JDK1.8
+     *
      * @param str
      * @return java.lang.String
      * @author Wang926454

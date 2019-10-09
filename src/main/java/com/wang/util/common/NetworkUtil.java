@@ -2,10 +2,12 @@ package com.wang.util.common;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * Network工具
+ *
  * @author Wang926454
  * @date 2018/9/4 15:02
  */
@@ -28,6 +30,7 @@ public class NetworkUtil {
 
     /**
      * 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址
+     *
      * @param request
      * @return java.lang.String
      * @author Wang926454

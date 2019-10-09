@@ -7,6 +7,7 @@ import java.util.UUID;
 
 /**
  * Random工具
+ *
  * @author Wang926454
  * @date 2018/9/4 14:56
  */
@@ -18,9 +19,10 @@ public class RandomUtil {
 
     /**
      * 获取日期加上3位随机数的随机数
+     *
      * @return
      */
-    public static String getRandom(){
+    public static String getRandom() {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         String dateNowStr = sdf.format(date);
@@ -30,18 +32,20 @@ public class RandomUtil {
 
     /**
      * 获取4位随机数
+     *
      * @return
      */
-    public static String getCode(){
+    public static String getCode() {
         int random = RAND.nextInt(9000) + 1000;
         return random + "";
     }
 
     /**
      * 获取日期加8位UUID随机名称
+     *
      * @return
      */
-    public static String getName(){
+    public static String getName() {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         String dateNowStr = sdf.format(date);
@@ -51,9 +55,10 @@ public class RandomUtil {
 
     /**
      * 生成UUID随机ID
+     *
      * @return
      */
-    public static String getUUID(){
+    public static String getUUID() {
         UUID uuid = UUID.randomUUID();
         String str = uuid.toString();
         String uuidStr = str.replace("-", "");

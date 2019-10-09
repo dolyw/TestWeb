@@ -19,7 +19,7 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doGet(req, resp);
+        // super.doGet(req, resp);
         // 设置响应内容类型
         resp.setContentType("text/html;charset=UTF-8");
         System.out.println("测试热部署");
@@ -27,19 +27,19 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doPost(req, resp);
+        // super.doPost(req, resp);
         doGet(req, resp);
     }
 
     @Override
     public void destroy() {
-        //super.destroy();
+        // super.destroy();
         System.out.println("TestServlet销毁");
     }
 
     @Override
     public void init() throws ServletException {
-        //super.init();
+        // super.init();
         System.out.println("TestServlet启动");
     }
 }

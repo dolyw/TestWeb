@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 
 /**
  * Serializable工具(JDK)(也可以使用Protobuf自行百度)
+ *
  * @author Wang926454
  * @date 2018/9/4 15:13
  */
@@ -15,6 +16,7 @@ public class SerializableUtil {
 
     /**
      * 序列化
+     *
      * @param object
      * @return byte[]
      * @author Wang926454
@@ -33,10 +35,10 @@ public class SerializableUtil {
             e.getMessage();
         } finally {
             try {
-                if(oos != null) {
+                if (oos != null) {
                     oos.close();
                 }
-                if(baos != null) {
+                if (baos != null) {
                     baos.close();
                 }
             } catch (IOException e) {
@@ -48,6 +50,7 @@ public class SerializableUtil {
 
     /**
      * 反序列化
+     *
      * @param bytes
      * @return java.lang.Object
      * @author Wang926454
@@ -66,10 +69,10 @@ public class SerializableUtil {
             e.getMessage();
         } finally {
             try {
-                if(ois != null) {
+                if (ois != null) {
                     ois.close();
                 }
-                if(bais != null) {
+                if (bais != null) {
                     bais.close();
                 }
             } catch (IOException e) {

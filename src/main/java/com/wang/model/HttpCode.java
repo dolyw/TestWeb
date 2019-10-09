@@ -2,6 +2,7 @@ package com.wang.model;
 
 /**
  * 响应码枚举，参考HTTP状态码的语义
+ *
  * @author Wang926454
  * @date 2018/11/13 18:17
  */

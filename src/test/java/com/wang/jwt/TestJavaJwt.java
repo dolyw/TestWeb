@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Java-Jwt
+ *
  * @author Wang926454
  * @date 2018/8/31 9:08
  */
@@ -22,39 +23,42 @@ public class TestJavaJwt {
 
     /**
      * 加密获取Token
+     *
      * @param
      * @return void
      * @author Wang926454
      * @date 2018/8/31 9:13
      */
     @Test
-    public void Test01(){
+    public void Test01() {
         String token = JwtUtil.sign("wang", "wang926454" + SECRETUUID);
         System.out.println(token);
     }
 
     /**
      * 获取用户名
+     *
      * @param
      * @return void
      * @author Wang926454
      * @date 2018/8/31 9:13
      */
     @Test
-    public void Test02(){
+    public void Test02() {
         String account = JwtUtil.getClaim(TOKEN, "account");
         System.out.println(account);
     }
 
     /**
      * 认证Token
+     *
      * @param
      * @return void
      * @author Wang926454
      * @date 2018/8/31 9:13
      */
     @Test
-    public void Test03(){
+    public void Test03() {
         boolean flag = JwtUtil.verify(TOKEN, "wang926454" + SECRETUUID);
         System.out.println(flag);
     }

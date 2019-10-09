@@ -5,13 +5,15 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * MD5
+ *
  * @author Wang926454
  * @date 2018/8/21 15:05
  */
 public class EncrypMD5 {
-    
+
     /**
      * 加密
+     *
      * @param info
      * @return byte[]
      * @author Wang926454
@@ -30,12 +32,13 @@ public class EncrypMD5 {
 
     /**
      * 测试
+     *
      * @param args
      * @return void
      * @author Wang926454
      * @date 2018/8/21 15:09
      */
-    public static void main(String args[]) throws NoSuchAlgorithmException{
+    public static void main(String args[]) throws NoSuchAlgorithmException {
         String msg = "dhdslkaflkf";
         EncrypMD5 md5 = new EncrypMD5();
         byte[] resultBytes = md5.eccrypt(msg);

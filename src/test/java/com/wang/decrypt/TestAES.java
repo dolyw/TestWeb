@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * AES测试
+ *
  * @author Wang926454
  * @date 2018/8/31 9:51
  */
@@ -12,7 +13,8 @@ public class TestAES {
 
     /**
      * 以帐号加密码的方式加密，可以减少加密后重复
-     * @param 
+     *
+     * @param
      * @return void
      * @author Wang926454
      * @date 2018/8/31 17:40
@@ -24,7 +26,8 @@ public class TestAES {
 
     /**
      * 解密
-     * @param 
+     *
+     * @param
      * @return void
      * @author Wang926454
      * @date 2018/8/31 17:40

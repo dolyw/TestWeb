@@ -6,6 +6,7 @@ package com.wang.util;
  * 许可的编辑操作包括将一个字符替换成另一个字符，插入一个字符，删除一个字符
  * 一般来说，编辑距离越小，两个串的相似度越大
  * https://www.cnblogs.com/xiaoyulong/p/8846745.html
+ *
  * @author Wang926454
  * @date 2018/9/18 18:10
  */
@@ -16,7 +17,7 @@ public class EditDistanceUtil {
      */
     private static int compare(String str, String target) {
         // 矩阵
-        int [][] d;
+        int[][] d;
         int n = str.length();
         int m = target.length();
         // 遍历str的
@@ -29,8 +30,12 @@ public class EditDistanceUtil {
         char ch2;
         // 记录相同字符，在某个矩阵位置值的增量，不是0就是1
         int temp;
-        if (n == 0) { return m; }
-        if (m == 0) { return n; }
+        if (n == 0) {
+            return m;
+        }
+        if (m == 0) {
+            return n;
+        }
         d = new int[n + 1][m + 1];
         for (i = 0; i <= n; i++) {
             // 初始化第一列
@@ -47,7 +52,7 @@ public class EditDistanceUtil {
             // 去匹配target
             for (j = 1; j <= m; j++) {
                 ch2 = target.charAt(j - 1);
-                if (ch1 == ch2 || ch1 == ch2+32 || ch1+32 == ch2) {
+                if (ch1 == ch2 || ch1 == ch2 + 32 || ch1 + 32 == ch2) {
                     temp = 0;
                 } else {
                     temp = 1;

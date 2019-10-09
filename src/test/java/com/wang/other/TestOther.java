@@ -16,34 +16,34 @@ import java.util.Date;
 public class TestOther {
 
     @Test
-    public void String(){
+    public void String() {
         // 格式化输出
         int i = 1;
-        System.out.println(String.format("%02d",i));
+        System.out.println(String.format("%02d", i));
 
         //测试01相加
         String s = "01";
         System.out.println(Integer.parseInt(s));
         System.out.println(Integer.parseInt(s) + 1);
-        System.out.println(String.format("%02d",Integer.parseInt(s) + 1));
+        System.out.println(String.format("%02d", Integer.parseInt(s) + 1));
 
         //测试15相加
         String s2 = "15";
         System.out.println(Integer.parseInt(s2));
         System.out.println(Integer.parseInt(s2) + 1);
-        System.out.println(String.format("%02d",Integer.parseInt(s2) + 1));
+        System.out.println(String.format("%02d", Integer.parseInt(s2) + 1));
     }
 
     @Test
-    public void String2(){
+    public void String2() {
         String s2 = "0101";
         System.out.println(Integer.parseInt(s2));
         System.out.println(Integer.parseInt(s2) + 1);
-        System.out.println(String.format("%06d",Integer.parseInt(s2) + 1));
+        System.out.println(String.format("%06d", Integer.parseInt(s2) + 1));
     }
 
     @Test
-    public void String3(){
+    public void String3() {
         String s1 = "pdms_dev".replace("pdms_", "");
         System.out.println(s1);
     }
@@ -54,7 +54,7 @@ public class TestOther {
      * @Date 2018/6/23 14:15
      */
     @Test
-    public void Date(){
+    public void Date() {
         String date1 = "2018-07-07";
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -67,23 +67,25 @@ public class TestOther {
 
     /**
      * 通过时间秒毫秒数判断两个时间的间隔
+     *
      * @param date1
      * @param date2
      * @return
      */
     public static int differentDaysByMillisecond(Date date1, Date date2) {
-        int days = (int) ((date2.getTime() - date1.getTime()) / (1000*3600*24));
+        int days = (int) ((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
         return days;
     }
 
     /**
      * 通过时间秒毫秒数判断两个时间的间隔
+     *
      * @param date1
      * @param date2
      * @return
      */
     public static int differentHoursByMillisecond(Date date1, Date date2) {
-        int hour = (int) ((date2.getTime() - date1.getTime()) / (1000*3600));
+        int hour = (int) ((date2.getTime() - date1.getTime()) / (1000 * 3600));
         return hour;
     }
 
@@ -93,7 +95,7 @@ public class TestOther {
      * @Date 2018/7/4 13:34
      */
     @Test
-    public void StringBuffer(){
+    public void StringBuffer() {
         StringBuffer stringBuffer = new StringBuffer("34,55,88");
         System.out.println(stringBuffer.toString());
 
@@ -103,7 +105,7 @@ public class TestOther {
         System.out.println(strbuff.toString());
 
         String[] strArray = convertStrToArray(no);
-        for (String str:strArray) {
+        for (String str : strArray) {
             System.out.println(str);
         }
         for (int i = 0; i < strArray.length; i++) {
@@ -116,7 +118,7 @@ public class TestOther {
      * @Author Wang926454
      * @Date 2018/7/4 13:48
      */
-    public static String[] convertStrToArray(String str){
+    public static String[] convertStrToArray(String str) {
         String[] strArray = null;
         strArray = str.split(","); //拆分字符为"," ,然后把结果交给数组strArray
         return strArray;
@@ -124,13 +126,14 @@ public class TestOther {
 
     /**
      * 格式化输出时间
-     * @param 
+     *
+     * @param
      * @return void
      * @author Wang926454
      * @date 2018/8/25 18:10
      */
     @Test
-    public void Date2(){
+    public void Date2() {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(df.format(new Date()).toString());
         System.out.println(System.currentTimeMillis());
@@ -139,20 +142,20 @@ public class TestOther {
     }
 
     @Test
-    public void t3(){
-        try{
+    public void t3() {
+        try {
             System.out.println("c");
             return;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
-        }finally {
+        } finally {
             System.out.println("finally");
         }
         System.out.println("con");
     }
 
     @Test
-    public void t4(){
+    public void t4() {
         String s = "dsa2:dsa1:wqe3";
         String[] strArray = null;
         strArray = s.split(":"); //拆分字符为"," ,然后把结果交给数组strArray
@@ -160,7 +163,7 @@ public class TestOther {
     }
 
     @Test
-    public void t5(){
+    public void t5() {
         System.out.println(HttpCode.SUCCESS);
         System.out.println(HttpCode.SUCCESS.code());
     }

@@ -8,6 +8,7 @@ import java.util.Properties;
 
 /**
  * Properties工具
+ *
  * @author Wang926454
  * @date 2018/8/31 17:29
  */
@@ -20,25 +21,26 @@ public class PropertiesUtil {
 
     /**
      * 读取配置文件
+     *
      * @param fileName
      * @return void
      * @author Wang926454
      * @date 2018/8/31 17:29
      */
-    public static void readProperties(String fileName){
+    public static void readProperties(String fileName) {
         InputStream in = null;
         try {
             in = PropertiesUtil.class.getResourceAsStream("/" + fileName);
             BufferedReader bf = new BufferedReader(new InputStreamReader(in));
             PROP.load(bf);
-        } catch (IOException e){
+        } catch (IOException e) {
             e.getMessage();
         } finally {
-            try{
-                if(in != null){
+            try {
+                if (in != null) {
                     in.close();
                 }
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.getMessage();
             }
         }
@@ -46,12 +48,13 @@ public class PropertiesUtil {
 
     /**
      * 根据key读取对应的value
+     *
      * @param key
      * @return java.lang.String
      * @author Wang926454
      * @date 2018/8/31 17:29
      */
-    public static String getProperty(String key){
+    public static String getProperty(String key) {
         return PROP.getProperty(key);
     }
 }
